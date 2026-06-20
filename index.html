@@ -5,9 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+GLOBAL
+========================= */
+
 *{
 margin:0;
 padding:0;
@@ -16,158 +21,294 @@ box-sizing:border-box;
 
 body{
 font-family:'Montserrat',sans-serif;
-color:#fff;
 overflow-x:hidden;
-background:url('bg.jpg') no-repeat center center/cover;
+color:#fff;
+scroll-behavior:smooth;
 }
 
-/* soft overlay instead of black */
-.overlay{
+/* =========================
+BACKGROUND LAYER SYSTEM
+========================= */
+
+.bg{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(255,255,255,0.25);
-backdrop-filter:blur(2px);
+background:url('bg.jpg') center/cover no-repeat;
+transform:scale(1.1);
+z-index:-3;
+}
+
+.bg-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+180deg,
+rgba(255,245,235,0.55),
+rgba(255,255,255,0.35),
+rgba(255,235,220,0.55)
+);
+backdrop-filter:blur(4px);
+z-index:-2;
+}
+
+.vignette{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+box-shadow:inset 0 0 200px rgba(0,0,0,0.25);
 z-index:-1;
 }
 
-header{
+/* =========================
+NAV
+========================= */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:20px;
+z-index:1000;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-weight:500;
+letter-spacing:1px;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
 height:100vh;
 display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
 flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 position:relative;
 }
 
-h1{
+.hero h1{
 font-family:'Playfair Display',serif;
-font-size:60px;
-color:#fff;
-text-shadow:0 4px 20px rgba(0,0,0,0.4);
+font-size:70px;
+text-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-.subtitle{
+.hero p{
 margin-top:15px;
 font-size:20px;
+opacity:0.9;
 }
 
 .date{
 margin-top:10px;
 font-size:22px;
-letter-spacing:2px;
+letter-spacing:3px;
 }
 
-.section{
-padding:80px 20px;
-text-align:center;
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(6px);
-margin:20px;
-border-radius:20px;
+.countdown{
+margin-top:25px;
+font-size:26px;
+font-weight:500;
 }
 
-.story{
-max-width:800px;
+/* =========================
+SECTIONS
+========================= */
+
+section{
+padding:100px 20px;
+max-width:1100px;
 margin:auto;
-line-height:1.8;
-font-size:18px;
-color:#fff;
 }
+
+.card{
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:25px;
+margin-bottom:40px;
+box-shadow:0 20px 60px rgba(0,0,0,0.15);
+}
+
+/* =========================
+TIMELINE
+========================= */
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.event{
+padding:20px;
+border-left:3px solid #fff;
+padding-left:20px;
+}
+
+/* =========================
+GALLERY
+========================= */
 
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:15px;
-margin-top:20px;
 }
 
 .gallery img{
 width:100%;
 border-radius:15px;
-transition:0.3s;
+cursor:pointer;
+transition:0.4s;
 }
 
 .gallery img:hover{
 transform:scale(1.05);
 }
 
-.countdown{
-font-size:30px;
-margin-top:20px;
-font-weight:500;
+/* lightbox */
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
 }
 
-audio{
-margin-top:20px;
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
 }
 
-.rsvp input, .rsvp textarea{
-width:80%;
+/* =========================
+RSVP
+========================= */
+
+input,textarea{
+width:100%;
 padding:12px;
 margin:10px 0;
 border:none;
 border-radius:10px;
 }
 
-.rsvp button{
+button{
 padding:12px 25px;
 border:none;
-background:#ffffff;
-color:#000;
 border-radius:10px;
+background:#fff;
 cursor:pointer;
+font-weight:600;
 }
 
-footer{
-text-align:center;
-padding:30px;
-font-size:14px;
-}
+/* =========================
+PARTICLES / HEARTS
+========================= */
 
 .heart{
 position:fixed;
 top:-10px;
-color:pink;
+color:#ff6b9a;
 animation:fall linear infinite;
+z-index:0;
 }
 
 @keyframes fall{
 0%{transform:translateY(-10px) rotate(0);}
 100%{transform:translateY(110vh) rotate(360deg);}
 }
+
+/* =========================
+MUSIC PLAYER
+========================= */
+
+.player{
+position:fixed;
+bottom:20px;
+right:20px;
+background:rgba(255,255,255,0.3);
+backdrop-filter:blur(10px);
+padding:15px;
+border-radius:15px;
+display:flex;
+align-items:center;
+gap:10px;
+z-index:1000;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<div class="bg"></div>
+<div class="bg-overlay"></div>
+<div class="vignette"></div>
 
-<header>
+<nav>
+<a href="#story">Սեր</a>
+<a href="#gallery">Լուսանկարներ</a>
+<a href="#timeline">Պատմություն</a>
+<a href="#rsvp">RSVP</a>
+</nav>
+
+<header class="hero">
 <h1>Սիրով հրավիրում ենք</h1>
-<div class="subtitle">Մեր կյանքի ամենակարևոր օրը</div>
+<p>Մեր կյանքի ամենագեղեցիկ օրը</p>
 <div class="date">17.10.2026</div>
-
 <div class="countdown" id="countdown"></div>
-
-<audio controls autoplay loop>
-<source src="John Legend - All of Me.mp3" type="audio/mp3">
-</audio>
 </header>
 
-<section class="section">
+<section id="story">
+<div class="card">
 <h2>Մեր պատմությունը</h2>
-<div class="story">
+<p style="margin-top:15px; line-height:1.8;">
 Դու իմ վերջինը՝ գիտակցաբար,  
-Եվ իմ միակը՝ ճակատագրով...  
-Այս օրը մենք որոշեցինք միասին սկսել մեր նոր ճանապարհը՝ սիրով, հավատով և հավերժությամբ։
+և իմ միակը՝ ճակատագրով...  
+Սիրով սկսում ենք մեր նոր կյանքը՝ լի հավատով, խաղաղությամբ և սիրով։
+</p>
 </div>
 </section>
 
-<section class="section">
+<section id="timeline">
+<div class="card">
+<h2>Մեր ճանապարհը</h2>
+<div class="timeline">
+<div class="event">💫 Առաջին հանդիպում</div>
+<div class="event">❤️ Սիրո սկիզբ</div>
+<div class="event">💍 Նշանադրություն</div>
+<div class="event">🌿 Հարսանիք</div>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="card">
 <h2>Լուսանկարներ</h2>
 <div class="gallery">
 <img src="gallery1.jpg">
@@ -175,55 +316,105 @@ animation:fall linear infinite;
 <img src="gallery3.jpg">
 <img src="gallery4.jpg">
 </div>
+</div>
 </section>
 
-<section class="section">
+<section>
+<div class="card">
 <h2>Տեղանք</h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;border-radius:15px;"></iframe>
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18..."
+width="100%" height="300"
+style="border:0;border-radius:15px;">
+</iframe>
+</div>
 </section>
 
-<section class="section rsvp">
+<section id="rsvp">
+<div class="card">
 <h2>RSVP</h2>
-<input type="text" placeholder="Անուն">
-<input type="text" placeholder="Ազգանուն">
-<textarea placeholder="Հաղորդագրություն"></textarea>
-<br>
-<button>Ուղարկել</button>
+
+<form onsubmit="sendRSVP(event)">
+<input id="name" placeholder="Անուն">
+<input id="email" placeholder="Email">
+<textarea id="msg" placeholder="Հաղորդագրություն"></textarea>
+<button type="submit">Ուղարկել</button>
+</form>
+
+</div>
 </section>
 
-<footer>
-Սիրով սպասում ենք ձեզ ❤️
-</footer>
+<!-- MUSIC -->
+<div class="player">
+<button onclick="toggleMusic()">▶ / ❚❚</button>
+<audio id="music" loop>
+<source src="All-of-Me.mp3" type="audio/mp3">
+</audio>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="this.style.display='none'">
+<img id="lightboxImg">
+</div>
 
 <script>
-// countdown
+
+/* COUNTDOWN */
 const weddingDate = new Date("Oct 17, 2026 00:00:00").getTime();
 
 setInterval(()=>{
-const now = new Date().getTime();
-const diff = weddingDate - now;
+let now = new Date().getTime();
+let diff = weddingDate - now;
 
-const days = Math.floor(diff/(1000*60*60*24));
-const hours = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-const minutes = Math.floor((diff%(1000*60*60))/(1000*60));
-const seconds = Math.floor((diff%(1000*60))/1000);
+let d = Math.floor(diff/(1000*60*60*24));
+let h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+let m = Math.floor((diff%(1000*60*60))/(1000*60));
+let s = Math.floor((diff%(1000*60))/1000);
 
 document.getElementById("countdown").innerHTML =
-days+" օր "+hours+" ժ "+minutes+" ր "+seconds+" վ";
+`${d} օր ${h} ժ ${m} ր ${s} վ`;
 },1000);
 
-// floating hearts
-function createHeart(){
-const heart=document.createElement("div");
-heart.classList.add("heart");
+/* HEARTS */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
 heart.innerHTML="❤";
 heart.style.left=Math.random()*100+"vw";
 heart.style.animationDuration=(3+Math.random()*5)+"s";
 document.body.appendChild(heart);
-
 setTimeout(()=>heart.remove(),8000);
+},300);
+
+/* MUSIC */
+function toggleMusic(){
+let music=document.getElementById("music");
+if(music.paused) music.play();
+else music.pause();
 }
-setInterval(createHeart,400);
+
+/* RSVP */
+function sendRSVP(e){
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let msg=document.getElementById("msg").value;
+
+window.location.href=
+`mailto:test@example.com?subject=RSVP ${name}&body=${msg} (${email})`;
+
+alert("Շնորհակալություն ❤️");
+}
+
+/* GALLERY LIGHTBOX */
+document.querySelectorAll(".gallery img").forEach(img=>{
+img.onclick=()=>{
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightboxImg").src=img.src;
+}
+});
+
 </script>
 
 </body>
