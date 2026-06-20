@@ -1,262 +1,3 @@
-```html
-<!DOCTYPE html>
-<html lang="hy">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Արման & Հայկուհի | 17.10.2026</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-</head>
-
-<body>
-
-<audio id="music" loop>
-    <source src="allofme.mp3" type="audio/mpeg">
-</audio>
-
-<button id="musicBtn">
-    ♫ Միացնել երաժշտությունը
-</button>
-
-<section class="hero">
-
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-
-        <p class="quote">
-            Դու իմ վերջինը՝ գիտակցաբար,<br>
-            Եվ իմ միակը՝ ճակատագրով...
-        </p>
-
-        <div class="date-small">
-            17.10.2026
-        </div>
-
-        <h1>Արման</h1>
-
-        <div class="heart">
-            ♥
-        </div>
-
-        <h1>Հայկուհի</h1>
-
-        <div class="scroll">
-            Սահեցրեք ներքև
-        </div>
-
-    </div>
-
-</section>
-
-<section class="invitation">
-
-    <h2>Սիրելի՛ հարազատներ և ընկերներ</h2>
-
-    <p>
-        Մեծ ուրախությամբ հրավիրում ենք Ձեզ
-        մասնակցելու մեր կյանքի ամենակարևոր
-        և ամենաերջանիկ օրվան։
-    </p>
-
-    <p>
-        Օգնեք մեզ դարձնել մեր օրն առավել
-        հիշարժան ձեր մասնակցությամբ։
-    </p>
-
-</section>
-
-<section class="date-section">
-
-    <h2>17 Հոկտեմբեր 2026</h2>
-
-    <div class="calendar">
-
-        <div class="month">
-            ՀՈԿՏԵՄԲԵՐ
-        </div>
-
-        <div class="day">
-            17
-        </div>
-
-        <div class="week">
-            ՇԱԲԱԹ
-        </div>
-
-    </div>
-
-</section>
-
-<section class="countdown-section">
-
-    <h2>Մինչ մեր օրը մնացել է</h2>
-
-    <div id="countdown">
-
-        <div class="box">
-            <span id="days">0</span>
-            Օր
-        </div>
-
-        <div class="box">
-            <span id="hours">0</span>
-            Ժամ
-        </div>
-
-        <div class="box">
-            <span id="minutes">0</span>
-            Րոպե
-        </div>
-
-        <div class="box">
-            <span id="seconds">0</span>
-            Վայրկյան
-        </div>
-
-    </div>
-
-</section>
-
-<section class="ceremony">
-
-    <h2>Պսակադրություն</h2>
-
-    <h3>14:00</h3>
-
-    <p>
-        Սուրբ Խաչ եկեղեցի (Արկազ)
-    </p>
-
-    <a href="#" class="map-btn">
-        Բացել քարտեզը
-    </a>
-
-</section>
-
-<section class="heart-transition">
-
-    <div class="floating-heart">♡</div>
-    <div class="floating-heart">♥</div>
-    <div class="floating-heart">♡</div>
-    <div class="floating-heart">♥</div>
-    <div class="floating-heart">♡</div>
-
-</section>
-
-<section class="party">
-
-    <h2>Հարսանյաց հանդիսություն</h2>
-
-    <h3>18:30</h3>
-
-    <p>
-        Լիդեր Կոմպլեքս
-    </p>
-
-    <a href="#" class="map-btn">
-        Բացել քարտեզը
-    </a>
-
-</section>
-
-<section class="dress-code">
-
-    <h2>Հագուստի վերաբերյալ</h2>
-
-    <p>
-        Հագեք այն հագուստը,
-        որով Ձեզ կզգաք առավել
-        հարմարավետ։
-    </p>
-
-    <p>
-        Միայն խնդրում ենք հարգել
-        հարսնացուի տոնը և թույլ տալ,
-        որ այդ օրը ճերմակ կրի միայն նա։
-    </p>
-
-</section>
-
-<section class="rsvp">
-
-    <h2>Հաստատեք Ձեր մասնակցությունը</h2>
-
-    <p>
-        Մինչև 05.10.2026
-    </p>
-
-    <form id="rsvpForm">
-
-        <input
-            type="text"
-            id="name"
-            placeholder="Անուն, ազգանուն"
-            required
-        >
-
-        <label>
-            Ում կողմից եք հրավիրված
-        </label>
-
-        <select id="side">
-            <option>Արմանի կողմից</option>
-            <option>Հայկուհու կողմից</option>
-        </select>
-
-        <label>
-            Մասնակցություն
-        </label>
-
-        <select id="attendance">
-            <option>Մասնակցելու եմ</option>
-            <option>Ցավոք չեմ կարող</option>
-        </select>
-
-        <input
-            type="number"
-            id="guests"
-            placeholder="Անձանց քանակ"
-            required
-        >
-
-        <textarea
-            id="message"
-            placeholder="Մեկնաբանություն"
-        ></textarea>
-
-        <button type="submit">
-            Ուղարկել
-        </button>
-
-    </form>
-
-</section>
-
-<footer>
-
-    Սիրով՝
-
-    <br><br>
-
-    Արման և Հայկուհի
-
-    <br><br>
-
-    17.10.2026
-
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-```
 <!DOCTYPE html>
 <html lang="hy">
 <head>
@@ -264,40 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Wedding Invitation</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: "Georgia", serif;
-  background: #fffafc;
+  font-family: "Montserrat", sans-serif;
+  background: #0e0b10;
+  color: #fff;
   overflow-x: hidden;
 }
 
-/* Hero section */
+/* HERO */
 .hero {
-  position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('main.jpg') center/cover no-repeat;
-  color: white;
+  position: relative;
+  background: url("main.jpg") center/cover no-repeat;
+  background-attachment: fixed;
 }
 
-.overlay {
+.hero::after {
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  animation: fadeInUp 2s ease forwards;
   padding: 20px;
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
   margin-bottom: 10px;
 }
 
@@ -306,82 +53,98 @@ body {
   opacity: 0.9;
 }
 
-/* Subtle hearts */
-.heart {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 105, 135, 0.35);
-  transform: rotate(45deg);
-  animation: float 8s linear infinite;
+/* SECTIONS */
+.section {
+  padding: 100px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
 }
 
-.heart:before,
-.heart:after {
-  content: "";
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+}
+
+/* INPUTS */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* BUTTON */
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,77,109,0.5);
+}
+
+/* PARTICLES */
+.particle {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background: inherit;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.4);
   border-radius: 50%;
+  animation: float 10s linear infinite;
 }
-
-.heart:before { top: -5px; left: 0; }
-.heart:after { left: -5px; top: 0; }
 
 @keyframes float {
-  from { transform: translateY(100vh) rotate(45deg); }
-  to { transform: translateY(-10vh) rotate(45deg); }
+  from { transform: translateY(100vh); opacity: 0; }
+  to { transform: translateY(-10vh); opacity: 1; }
 }
 
-/* RSVP */
-.rsvp {
-  padding: 60px 20px;
-  text-align: center;
-  background: #fff;
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.rsvp input, .rsvp textarea {
-  width: 90%;
-  max-width: 400px;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.rsvp button {
-  padding: 10px 20px;
-  border: none;
-  background: #e91e63;
-  color: white;
-  border-radius: 20px;
-  cursor: pointer;
-}
+/* MUSIC HIDDEN */
+audio { display: none; }
 </style>
 </head>
 
 <body>
 
-<!-- Background music -->
+<!-- MUSIC -->
 <audio autoplay loop>
   <source src="John Legend - All of Me (Official Video).mp3" type="audio/mp3">
 </audio>
 
-<!-- Floating hearts -->
-<script>
-for (let i = 0; i < 25; i++) {
-  let heart = document.createElement("div");
-  heart.className = "heart";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
-  document.body.appendChild(heart);
-}
-</script>
-
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero">
-  <div class="overlay"></div>
   <div class="hero-content">
     <h1>Սիրով հրավիրում ենք մեր հարսանիքին</h1>
     <p>Դու իմ վերջինը՝ գիտակցաբար, Եվ իմ միակը՝ ճակատագրով...</p>
@@ -389,16 +152,56 @@ for (let i = 0; i < 25; i++) {
   </div>
 </section>
 
-<!-- RSVP -->
-<section class="rsvp">
-  <h2>RSVP</h2>
-  <p>Խնդրում ենք հաստատել ձեր ներկայությունը</p>
-
-  <input type="text" placeholder="Անուն Ազգանուն" />
-  <textarea placeholder="Հաստատում / Մեկնաբանություն"></textarea>
-  <br/>
-  <button onclick="alert('Շնորհակալ ենք ❤️')">Ուղարկել</button>
+<!-- DETAILS -->
+<section class="section">
+  <div class="card">
+    <h2>Միջոցառման մանրամասներ</h2>
+    <p>📍 Երևան, Հայաստան</p>
+    <p>🕒 17:00</p>
+  </div>
 </section>
+
+<!-- RSVP -->
+<section class="section">
+  <div class="card">
+    <h2>RSVP</h2>
+
+    <!-- REAL WORKING FORM (Formspree) -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Անուն Ազգանուն" required />
+      <textarea name="message" placeholder="Հաստատում / Մեկնաբանություն"></textarea>
+      <button type="submit">Հաստատել ներկայությունը</button>
+    </form>
+
+    <p style="font-size:12px; opacity:0.6; margin-top:10px;">
+      Ձեր պատասխանները կուղարկվեն մեզ անմիջապես
+    </p>
+  </div>
+</section>
+
+<script>
+// scroll reveal
+const sections = document.querySelectorAll(".section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(sec => observer.observe(sec));
+
+// floating particles
+for(let i=0;i<40;i++){
+  const p = document.createElement("div");
+  p.className = "particle";
+  p.style.left = Math.random()*100 + "vw";
+  p.style.animationDuration = (6 + Math.random()*6) + "s";
+  document.body.appendChild(p);
+}
+</script>
 
 </body>
 </html>
