@@ -8,327 +8,222 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-  font-family: "Montserrat", sans-serif;
-  background:#0b0a0f;
-  color:#fff;
-  overflow-x:hidden;
+body{
+font-family:'Montserrat',sans-serif;
+color:#fff;
+overflow-x:hidden;
+background:url('bg.jpg') no-repeat center center/cover;
 }
 
-/* =========================
-   INTRO LOADER
-========================= */
-#loader {
-  position:fixed;
-  inset:0;
-  background:#0b0a0f;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  z-index:9999;
+/* soft overlay instead of black */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(2px);
+z-index:-1;
 }
 
-.loader-heart {
-  font-size:40px;
-  animation:pulse 1.5s infinite;
+header{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+position:relative;
 }
 
-@keyframes pulse {
-  0% {transform:scale(1);}
-  50% {transform:scale(1.2);}
-  100% {transform:scale(1);}
+h1{
+font-family:'Playfair Display',serif;
+font-size:60px;
+color:#fff;
+text-shadow:0 4px 20px rgba(0,0,0,0.4);
 }
 
-/* =========================
-   HERO
-========================= */
-.hero {
-  height:100vh;
-  background:url("main.jpg") center/cover no-repeat;
-  background-attachment:fixed;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
+.subtitle{
+margin-top:15px;
+font-size:20px;
 }
 
-.hero::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.55);
+.date{
+margin-top:10px;
+font-size:22px;
+letter-spacing:2px;
 }
 
-.hero-content {
-  position:relative;
-  z-index:2;
-  animation:fadeInUp 2s ease;
+.section{
+padding:80px 20px;
+text-align:center;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(6px);
+margin:20px;
+border-radius:20px;
 }
 
-.hero h1 {
-  font-family:"Playfair Display", serif;
-  font-size:52px;
+.story{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+font-size:18px;
+color:#fff;
 }
 
-.hero p {
-  margin-top:10px;
-  opacity:0.9;
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:20px;
 }
 
-/* =========================
-   SECTIONS
-========================= */
-.section {
-  padding:120px 20px;
-  text-align:center;
-  opacity:0;
-  transform:translateY(60px);
-  transition:1s ease;
+.gallery img{
+width:100%;
+border-radius:15px;
+transition:0.3s;
 }
 
-.section.visible {
-  opacity:1;
-  transform:translateY(0);
+.gallery img:hover{
+transform:scale(1.05);
 }
 
-.card {
-  max-width:700px;
-  margin:auto;
-  padding:30px;
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:20px;
-  backdrop-filter:blur(12px);
+.countdown{
+font-size:30px;
+margin-top:20px;
+font-weight:500;
 }
 
-/* =========================
-   COUNTDOWN
-========================= */
-.countdown {
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  margin-top:20px;
+audio{
+margin-top:20px;
 }
 
-.countdown div {
-  text-align:center;
+.rsvp input, .rsvp textarea{
+width:80%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:10px;
 }
 
-/* =========================
-   GALLERY
-========================= */
-.gallery {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:10px;
-  margin-top:20px;
+.rsvp button{
+padding:12px 25px;
+border:none;
+background:#ffffff;
+color:#000;
+border-radius:10px;
+cursor:pointer;
 }
 
-.gallery img {
-  width:100%;
-  border-radius:10px;
+footer{
+text-align:center;
+padding:30px;
+font-size:14px;
 }
 
-/* =========================
-   INPUTS
-========================= */
-input, textarea {
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:10px;
-  border:none;
+.heart{
+position:fixed;
+top:-10px;
+color:pink;
+animation:fall linear infinite;
 }
 
-/* =========================
-   BUTTON
-========================= */
-button {
-  padding:12px 25px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(135deg,#ff4d6d,#ff8fa3);
-  cursor:pointer;
+@keyframes fall{
+0%{transform:translateY(-10px) rotate(0);}
+100%{transform:translateY(110vh) rotate(360deg);}
 }
-
-/* =========================
-   PARTICLES
-========================= */
-.particle, .heart {
-  position:fixed;
-  width:6px;
-  height:6px;
-  background:rgba(255,255,255,0.3);
-  border-radius:50%;
-  animation:float 10s linear infinite;
-}
-
-.heart {
-  background:pink;
-  transform:rotate(45deg);
-}
-
-@keyframes float {
-  from {transform:translateY(100vh);}
-  to {transform:translateY(-10vh);}
-}
-
-/* =========================
-   MAP
-========================= */
-.map {
-  width:100%;
-  height:300px;
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:20px;
-}
-
-iframe {
-  width:100%;
-  height:100%;
-  border:0;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-@keyframes fadeInUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
-audio {display:none;}
-
 </style>
 </head>
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="loader-heart">💖</div>
-  <p>Loading love story...</p>
-</div>
+<div class="overlay"></div>
 
-<!-- MUSIC -->
-<audio autoplay loop>
-  <source src="John Legend - All of Me (Official Video).mp3">
+<header>
+<h1>Սիրով հրավիրում ենք</h1>
+<div class="subtitle">Մեր կյանքի ամենակարևոր օրը</div>
+<div class="date">17.10.2026</div>
+
+<div class="countdown" id="countdown"></div>
+
+<audio controls autoplay loop>
+<source src="John Legend - All of Me.mp3" type="audio/mp3">
 </audio>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Սիրով հրավիրում ենք</h1>
-    <p>Դու իմ վերջինը՝ գիտակցաբար, Եվ իմ միակը՝ ճակատագրով...</p>
-    <p><strong>17.10.2026</strong></p>
-  </div>
-</section>
-
-<!-- COUNTDOWN -->
 <section class="section">
-  <div class="card">
-    <h2>Մինչ մեր մեծ օրը</h2>
-    <div class="countdown">
-      <div><span id="days"></span><p>Օր</p></div>
-      <div><span id="hours"></span><p>Ժամ</p></div>
-      <div><span id="minutes"></span><p>Րոպե</p></div>
-      <div><span id="seconds"></span><p>Վայրկյան</p></div>
-    </div>
-  </div>
+<h2>Մեր պատմությունը</h2>
+<div class="story">
+Դու իմ վերջինը՝ գիտակցաբար,  
+Եվ իմ միակը՝ ճակատագրով...  
+Այս օրը մենք որոշեցինք միասին սկսել մեր նոր ճանապարհը՝ սիրով, հավատով և հավերժությամբ։
+</div>
 </section>
 
-<!-- DETAILS -->
 <section class="section">
-  <div class="card">
-    <h2>Միջոցառման մանրամասներ</h2>
-    <p>📍 Երևան</p>
-    <p>🕒 17:00</p>
-
-    <div class="map">
-      <iframe src="https://maps.google.com/maps?q=Yerevan&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-    </div>
-  </div>
+<h2>Լուսանկարներ</h2>
+<div class="gallery">
+<img src="gallery1.jpg">
+<img src="gallery2.jpg">
+<img src="gallery3.jpg">
+<img src="gallery4.jpg">
+</div>
 </section>
 
-<!-- GALLERY -->
 <section class="section">
-  <div class="card">
-    <h2>Մեր պատմությունը</h2>
-    <div class="gallery">
-      <img src="1.jpg">
-      <img src="2.jpg">
-      <img src="3.jpg">
-      <img src="4.jpg">
-    </div>
-  </div>
+<h2>Տեղանք</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;border-radius:15px;"></iframe>
 </section>
 
-<!-- RSVP -->
-<section class="section">
-  <div class="card">
-    <h2>RSVP</h2>
-
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input name="name" placeholder="Անուն Ազգանուն" required>
-      <textarea name="msg" placeholder="Հաստատում"></textarea>
-      <button type="submit">Ուղարկել</button>
-    </form>
-  </div>
+<section class="section rsvp">
+<h2>RSVP</h2>
+<input type="text" placeholder="Անուն">
+<input type="text" placeholder="Ազգանուն">
+<textarea placeholder="Հաղորդագրություն"></textarea>
+<br>
+<button>Ուղարկել</button>
 </section>
+
+<footer>
+Սիրով սպասում ենք ձեզ ❤️
+</footer>
 
 <script>
-
-/* LOADER */
-window.onload = () => {
-  setTimeout(()=> {
-    document.getElementById("loader").style.display="none";
-  }, 2000);
-};
-
-/* SCROLL */
-const sections = document.querySelectorAll(".section");
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add("visible");
-  });
-});
-sections.forEach(s=>obs.observe(s));
-
-/* PARTICLES */
-for(let i=0;i<60;i++){
-  const p=document.createElement("div");
-  p.className="particle";
-  p.style.left=Math.random()*100+"vw";
-  document.body.appendChild(p);
-}
-
-/* COUNTDOWN */
-const target = new Date("2026-10-17T17:00:00").getTime();
+// countdown
+const weddingDate = new Date("Oct 17, 2026 00:00:00").getTime();
 
 setInterval(()=>{
-  const now = new Date().getTime();
-  const diff = target-now;
+const now = new Date().getTime();
+const diff = weddingDate - now;
 
-  document.getElementById("days").innerText=Math.floor(diff/(1000*60*60*24));
-  document.getElementById("hours").innerText=Math.floor(diff/(1000*60*60)%24);
-  document.getElementById("minutes").innerText=Math.floor(diff/(1000*60)%60);
-  document.getElementById("seconds").innerText=Math.floor(diff/1000%60);
+const days = Math.floor(diff/(1000*60*60*24));
+const hours = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((diff%(1000*60*60))/(1000*60));
+const seconds = Math.floor((diff%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days+" օր "+hours+" ժ "+minutes+" ր "+seconds+" վ";
 },1000);
 
+// floating hearts
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),8000);
+}
+setInterval(createHeart,400);
 </script>
 
 </body>
