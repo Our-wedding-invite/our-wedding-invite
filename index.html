@@ -333,6 +333,40 @@ form.addEventListener("submit", async (e) => {
 });
 
 </script>
+<footer>
+Սիրով սպասում ենք ձեզ ❤️
+</footer>
 
+<script>
+// countdown
+const weddingDate = new Date("Oct 17, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+const now = new Date().getTime();
+const diff = weddingDate - now;
+
+const days = Math.floor(diff/(1000*60*60*24));
+const hours = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((diff%(1000*60*60))/(1000*60));
+const seconds = Math.floor((diff%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days+" օր "+hours+" ժ "+minutes+" ր "+seconds+" վ";
+},1000);
+
+// floating hearts
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),8000);
+}
+setInterval(createHeart,400);
+</script>
+    
 </body>
 </html>
