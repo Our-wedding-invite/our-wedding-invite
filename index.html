@@ -1,570 +1,697 @@
 <!DOCTYPE html>
 <html lang="hy">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Արման &amp; Հայկուհի — Հրավեր</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Arman & Haykuhi | 17.10.2026</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --cream:#D1D2D4;
-    --rose:#C19386;
-    --olive:#616657;
-    --sage:#909483;
-    --terracotta:#B25C40;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Montserrat',sans-serif;
-    color:var(--olive);
-    overflow-x:hidden;
-    background:var(--cream);
-}
-
-/* BACKGROUND */
-
-.hero-bg{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:
-    linear-gradient(
-        rgba(209,210,212,.70),
-        rgba(193,147,134,.35)
-    ),
-    url("hero.jpg");
-    background-size:cover;
-    background-position:center;
-    z-index:-3;
-}
-
-.blur-layer{
-    position:fixed;
-    width:100%;
-    height:100%;
-    backdrop-filter:blur(3px);
-    z-index:-2;
-}
-
-.vignette{
-    position:fixed;
-    width:100%;
-    height:100%;
-    box-shadow:inset 0 0 150px rgba(0,0,0,.15);
-    z-index:-1;
-}
-
-/* NAVIGATION */
-
-nav{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:90%;
-    max-width:850px;
-    padding:18px 30px;
-    border-radius:50px;
-    backdrop-filter:blur(20px);
-    background:rgba(255,255,255,.45);
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    z-index:1000;
-}
-
-nav a{
-    text-decoration:none;
-    color:var(--olive);
-    font-size:15px;
-    letter-spacing:1px;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:var(--terracotta);
-}
-
-/* HERO */
-
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-
-.quote{
-    font-size:28px;
-    max-width:700px;
-    color:var(--terracotta);
-    font-family:'Cormorant Garamond',serif;
-    margin-bottom:30px;
-    line-height:1.5;
-}
-
-.names{
-    font-size:90px;
-    font-family:'Cormorant Garamond',serif;
-    color:var(--olive);
-    font-weight:500;
-    letter-spacing:3px;
-}
-
-.date{
-    margin-top:20px;
-    font-size:22px;
-    letter-spacing:5px;
-}
-
-.subtitle{
-    margin-top:15px;
-    font-size:18px;
-    color:#555;
-}
-
-.countdown{
-    margin-top:50px;
-    display:flex;
-    gap:25px;
-}
-
-.time-box{
-    width:95px;
-    height:95px;
-    border-radius:25px;
-    background:rgba(255,255,255,.55);
-    backdrop-filter:blur(15px);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.time-number{
-    font-size:30px;
-    color:var(--terracotta);
-    font-weight:600;
-}
-
-.time-label{
-    font-size:13px;
-    letter-spacing:1px;
-    margin-top:5px;
-}
-
-/* SCROLL */
-
-.scroll{
-    position:absolute;
-    bottom:40px;
-    font-size:14px;
-    color:var(--olive);
-    animation:updown 2s infinite;
-}
-
-@keyframes updown{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(10px);}
-    100%{transform:translateY(0);}
-}
-
-/* MUSIC */
-
-.music-btn{
-    position:fixed;
-    right:30px;
-    bottom:30px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    border:none;
-    background:rgba(255,255,255,.7);
-    backdrop-filter:blur(20px);
-    font-size:22px;
-    cursor:pointer;
-    z-index:1000;
-}
-
-/* HEARTS */
-
-.heart{
-    position:fixed;
-    top:-20px;
-    color:rgba(178,92,64,.20);
-    pointer-events:none;
-    z-index:1;
-    animation:fall linear;
-}
-
-@keyframes fall{
-    to{
-        transform:translateY(110vh);
-    }
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-    nav{
-        gap:15px;
-        padding:15px;
-        font-size:13px;
+    :root {
+      --silver:      #D1D2D4;
+      --nude:        #C19386;
+      --olive:       #616657;
+      --sage:        #909483;
+      --terra:       #B25C40;
+      --bg-dark:     #2a2824;
+      --bg-mid:      #35302c;
+      --cream:       #f5f0eb;
+      --white:       #faf8f5;
     }
 
-    .names{
-        font-size:55px;
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      letter-spacing: 0.04em;
+      overflow-x: hidden;
     }
 
-    .quote{
-        font-size:22px;
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 80px 24px 120px;
     }
 
-    .countdown{
-        flex-wrap:wrap;
-        justify-content:center;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 100% 60% at 50% 100%, rgba(178,92,64,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 50% at 20% 80%, rgba(97,102,87,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 40% at 80% 70%, rgba(193,147,134,0.15) 0%, transparent 50%),
+        linear-gradient(170deg, #1e1c1a 0%, #2a2824 45%, #1a1714 100%);
     }
 
-}
+    /* Floating heart particles */
+    .heart-particle {
+      position: absolute;
+      opacity: 0;
+      animation: floatUp var(--dur, 12s) ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+    }
+    @keyframes floatUp {
+      0%   { opacity: 0;    transform: translateY(0) scale(0.6) rotate(var(--rot,0deg)); }
+      15%  { opacity: 0.35; }
+      85%  { opacity: 0.2;  }
+      100% { opacity: 0;    transform: translateY(-280px) scale(1) rotate(var(--rot,0deg)); }
+    }
 
-</style>
+    /* Hero SVG scene — hearts floating */
+    .hero-svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 55%;
+      opacity: 0.9;
+    }
 
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 32px;
+    }
+
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(52px, 9vw, 96px);
+      line-height: 1.0;
+      letter-spacing: 0.01em;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .hero-names em {
+      font-style: italic;
+      color: var(--nude);
+    }
+
+    .amp-symbol {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(32px, 5vw, 52px);
+      color: var(--terra);
+      margin: 4px 0;
+      opacity: 0.85;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(15px, 2.2vw, 20px);
+      color: var(--silver);
+      opacity: 0.7;
+      letter-spacing: 0.1em;
+      margin-top: 20px;
+      margin-bottom: 52px;
+    }
+
+    .divider-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+    .divider-line::before,
+    .divider-line::after {
+      content: '';
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--terra));
+    }
+    .divider-line::after {
+      background: linear-gradient(to left, transparent, var(--terra));
+    }
+    .divider-heart {
+      color: var(--terra);
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .hero-date-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .hero-date {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--silver);
+      opacity: 0.65;
+    }
+    .hero-event-type {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2.8vw, 26px);
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 96px 24px; }
+    .section-inner { max-width: 820px; margin: 0 auto; }
+
+    /* ── SCROLL FADE ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── ABOUT ── */
+    .about {
+      background: linear-gradient(180deg, var(--bg-dark) 0%, #1e1c1a 100%);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 640px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .section-label {
+      font-size: 9px;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 18px;
+      display: block;
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 26px;
+    }
+    .section-heading em {
+      font-style: italic;
+      color: var(--nude);
+    }
+    .body-text {
+      font-size: 15px;
+      line-height: 1.95;
+      color: rgba(245,240,235,0.6);
+      font-weight: 200;
+    }
+
+    /* ── HEART ILLUSTRATION ── */
+    .heart-illustration {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    /* ── DETAILS ── */
+    .details {
+      background: #1a1814;
+      text-align: center;
+    }
+    .details-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 52px;
+    }
+    @media (max-width: 640px) {
+      .details-cards { grid-template-columns: 1fr; }
+    }
+    .detail-card {
+      padding: 44px 28px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(209,210,212,0.07);
+      transition: background 0.4s;
+    }
+    .detail-card:hover { background: rgba(255,255,255,0.055); }
+    .detail-icon { width: 38px; height: 38px; margin: 0 auto 22px; }
+    .detail-label {
+      font-size: 9px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .detail-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.45;
+    }
+    .detail-sub {
+      margin-top: 8px;
+      font-size: 11px;
+      color: rgba(245,240,235,0.38);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── DRESS CODE ── */
+    .dress {
+      background: linear-gradient(180deg, #1a1814 0%, var(--bg-dark) 100%);
+      text-align: center;
+    }
+    .palette-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 44px;
+    }
+    .swatch-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .swatch {
+      width: 54px; height: 54px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .swatch-name {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,240,235,0.4);
+    }
+
+    /* ── RSVP ── */
+    .rsvp-section { background: var(--bg-dark); text-align: center; }
+    .rsvp-form {
+      max-width: 440px;
+      margin: 48px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .rsvp-form input,
+    .rsvp-form select {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(209,210,212,0.18);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      padding: 15px 20px;
+      outline: none;
+      transition: border-color 0.3s;
+      appearance: none;
+    }
+    .rsvp-form input::placeholder { color: rgba(245,240,235,0.3); }
+    .rsvp-form input:focus,
+    .rsvp-form select:focus { border-color: var(--terra); }
+    .rsvp-form select option { background: #2a2824; }
+    .btn-rsvp {
+      margin-top: 8px;
+      padding: 17px 44px;
+      background: transparent;
+      border: 1px solid var(--terra);
+      color: var(--terra);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.35s, color 0.35s;
+    }
+    .btn-rsvp:hover { background: var(--terra); color: var(--white); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 44px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(209,210,212,0.07);
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--nude);
+      letter-spacing: 0.18em;
+      margin-bottom: 14px;
+    }
+    .footer-text {
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(245,240,235,0.25);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .heart-particle { animation: none; opacity: 0.15; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="hero-bg"></div>
-<div class="blur-layer"></div>
-<div class="vignette"></div>
-
-<nav>
-    <a href="#story">Մեր պատմությունը</a>
-    <a href="#day">Մեր օրը</a>
-    <a href="#location">Վայրը</a>
-    <a href="#rsvp">RSVP</a>
-</nav>
-
+<!-- ═══════════════════ HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
 
-    <div class="quote">
-        «Դու իմ վերջինը՝ գիտակցաբար,<br>
-        Եվ իմ միակը՝ ճակատագրով...»
+  <!-- Floating heart particles -->
+  <svg class="heart-particle" style="--dur:14s;--delay:0s;--rot:-12deg;left:12%;bottom:18%;width:18px;" viewBox="0 0 24 22"><path d="M12 21C12 21 2 13.5 2 7a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 6.5-10 14-10 14Z" fill="#C19386" opacity="0.5"/></svg>
+  <svg class="heart-particle" style="--dur:11s;--delay:2s;--rot:8deg;left:28%;bottom:10%;width:12px;" viewBox="0 0 24 22"><path d="M12 21C12 21 2 13.5 2 7a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 6.5-10 14-10 14Z" fill="#B25C40" opacity="0.4"/></svg>
+  <svg class="heart-particle" style="--dur:16s;--delay:5s;--rot:-5deg;left:60%;bottom:22%;width:22px;" viewBox="0 0 24 22"><path d="M12 21C12 21 2 13.5 2 7a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 6.5-10 14-10 14Z" fill="#C19386" opacity="0.35"/></svg>
+  <svg class="heart-particle" style="--dur:13s;--delay:7s;--rot:15deg;left:78%;bottom:8%;width:14px;" viewBox="0 0 24 22"><path d="M12 21C12 21 2 13.5 2 7a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 6.5-10 14-10 14Z" fill="#909483" opacity="0.4"/></svg>
+  <svg class="heart-particle" style="--dur:10s;--delay:3.5s;--rot:-20deg;left:88%;bottom:30%;width:10px;" viewBox="0 0 24 22"><path d="M12 21C12 21 2 13.5 2 7a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 6.5-10 14-10 14Z" fill="#B25C40" opacity="0.35"/></svg>
+  <svg class="heart-particle" style="--dur:15s;--delay:9s;--rot:6deg;left:45%;bottom:5%;width:16px;" viewBox="0 0 24 22"><path d="M12 21C12 21 2 13.5 2 7a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 6.5-10 14-10 14Z" fill="#D1D2D4" opacity="0.25"/></svg>
+
+  <!-- Bottom decorative SVG scene with layered hearts -->
+  <svg class="hero-svg" viewBox="0 0 1440 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+    <defs>
+      <radialGradient id="floorGlow" cx="50%" cy="80%" r="60%">
+        <stop offset="0%" stop-color="#B25C40" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#2a2824" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="softBlur"><feGaussianBlur stdDeviation="3"/></filter>
+      <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+
+    <!-- Ambient glow -->
+    <ellipse cx="720" cy="380" rx="700" ry="180" fill="url(#floorGlow)"/>
+
+    <!-- Horizontal line — ground -->
+    <line x1="0" y1="370" x2="1440" y2="370" stroke="rgba(209,210,212,0.06)" stroke-width="1"/>
+
+    <!-- Large central heart cluster -->
+    <!-- Main large heart -->
+    <g transform="translate(720,200)" filter="url(#glow)">
+      <path d="M0 70 C0 70 -75 25 -75 -20 A37.5 37.5 0 0 1 0 -10 A37.5 37.5 0 0 1 75 -20 C75 25 0 70 0 70Z"
+            fill="#C19386" opacity="0.22"/>
+    </g>
+    <!-- Outline heart behind -->
+    <g transform="translate(720,195)">
+      <path d="M0 85 C0 85 -90 30 -90 -22 A45 45 0 0 1 0 -12 A45 45 0 0 1 90 -22 C90 30 0 85 0 85Z"
+            fill="none" stroke="#B25C40" stroke-width="1" opacity="0.3"/>
+    </g>
+
+    <!-- Left cluster -->
+    <g transform="translate(300,290)">
+      <path d="M0 52 C0 52 -56 19 -56 -15 A28 28 0 0 1 0 -8 A28 28 0 0 1 56 -15 C56 19 0 52 0 52Z"
+            fill="#C19386" opacity="0.28"/>
+    </g>
+    <g transform="translate(240,330)">
+      <path d="M0 36 C0 36 -38 13 -38 -10 A19 19 0 0 1 0 -5 A19 19 0 0 1 38 -10 C38 13 0 36 0 36Z"
+            fill="none" stroke="#909483" stroke-width="1" opacity="0.35"/>
+    </g>
+    <g transform="translate(370,350)">
+      <path d="M0 28 C0 28 -30 10 -30 -8 A15 15 0 0 1 0 -4 A15 15 0 0 1 30 -8 C30 10 0 28 0 28Z"
+            fill="#B25C40" opacity="0.2"/>
+    </g>
+
+    <!-- Right cluster -->
+    <g transform="translate(1140,285)">
+      <path d="M0 50 C0 50 -54 18 -54 -14 A27 27 0 0 1 0 -7 A27 27 0 0 1 54 -14 C54 18 0 50 0 50Z"
+            fill="#C19386" opacity="0.25"/>
+    </g>
+    <g transform="translate(1210,330)">
+      <path d="M0 32 C0 32 -34 11 -34 -9 A17 17 0 0 1 0 -4 A17 17 0 0 1 34 -9 C34 11 0 32 0 32Z"
+            fill="none" stroke="#B25C40" stroke-width="1" opacity="0.3"/>
+    </g>
+    <g transform="translate(1070,355)">
+      <path d="M0 24 C0 24 -26 9 -26 -7 A13 13 0 0 1 0 -3 A13 13 0 0 1 26 -7 C26 9 0 24 0 24Z"
+            fill="#909483" opacity="0.22"/>
+    </g>
+
+    <!-- Scattered small hearts along bottom -->
+    <g transform="translate(120,370)">
+      <path d="M0 18 C0 18 -20 7 -20 -5 A10 10 0 0 1 0 -2 A10 10 0 0 1 20 -5 C20 7 0 18 0 18Z" fill="#C19386" opacity="0.25"/>
+    </g>
+    <g transform="translate(560,380)">
+      <path d="M0 16 C0 16 -17 6 -17 -4 A8.5 8.5 0 0 1 0 -2 A8.5 8.5 0 0 1 17 -4 C17 6 0 16 0 16Z" fill="#D1D2D4" opacity="0.2"/>
+    </g>
+    <g transform="translate(900,375)">
+      <path d="M0 20 C0 20 -22 8 -22 -6 A11 11 0 0 1 0 -2 A11 11 0 0 1 22 -6 C22 8 0 20 0 20Z" fill="#B25C40" opacity="0.2"/>
+    </g>
+    <g transform="translate(1350,368)">
+      <path d="M0 18 C0 18 -20 7 -20 -5 A10 10 0 0 1 0 -2 A10 10 0 0 1 20 -5 C20 7 0 18 0 18Z" fill="#909483" opacity="0.22"/>
+    </g>
+
+    <!-- Thin stem lines below hearts (like stems) -->
+    <line x1="300" y1="310" x2="298" y2="370" stroke="#616657" stroke-width="0.8" opacity="0.35"/>
+    <line x1="1140" y1="306" x2="1138" y2="370" stroke="#616657" stroke-width="0.8" opacity="0.3"/>
+    <line x1="720" y1="268" x2="718" y2="370" stroke="#616657" stroke-width="1" opacity="0.3"/>
+    <line x1="120" y1="354" x2="119" y2="370" stroke="#616657" stroke-width="0.6" opacity="0.25"/>
+
+    <!-- Decorative dots / buds -->
+    <circle cx="460" cy="358" r="3" fill="#C19386" opacity="0.3"/>
+    <circle cx="980" cy="362" r="2.5" fill="#B25C40" opacity="0.28"/>
+    <circle cx="620" cy="365" r="2" fill="#909483" opacity="0.3"/>
+    <circle cx="820" cy="360" r="3" fill="#D1D2D4" opacity="0.2"/>
+
+    <!-- Reflection shimmer lines -->
+    <line x1="200" y1="390" x2="600" y2="396" stroke="rgba(193,147,134,0.12)" stroke-width="1"/>
+    <line x1="700" y1="395" x2="1100" y2="400" stroke="rgba(193,147,134,0.1)" stroke-width="1"/>
+    <line x1="1000" y1="408" x2="1350" y2="412" stroke="rgba(178,92,64,0.1)" stroke-width="0.8"/>
+  </svg>
+
+  <!-- CONTENT -->
+  <div class="hero-content reveal">
+    <p class="eyebrow">Belle Ame &nbsp;·&nbsp; Հրավեր</p>
+    <h1 class="hero-names">Արման</h1>
+    <span class="amp-symbol">&amp;</span>
+    <h1 class="hero-names"><em>Հայկուհի</em></h1>
+    <p class="hero-subtitle">Սիրելի՛ հյուրեր,
+Սիրով հրավիրում ենք Ձեզ կիսելու մեր կյանքի ամենաերջանիկ օրը և դառնալու մեր սիրո ու միության վկաները։</p>
+    <div class="divider-line"><span class="divider-heart">♥</span></div>
+    <div class="hero-date-block">
+      <p class="hero-date">Շաբաթ, 17 Հոկտեմբեր 2026</p>
+      <p class="hero-event-type"></p>
     </div>
-
-    <div class="names">
-        Արման & Հայկուհի
-    </div>
-
-    <div class="date">
-        17 • 10 • 2026
-    </div>
-
-    <div class="subtitle">
-        Սիրով հրավիրում ենք կիսելու մեր կյանքի ամենաերջանիկ օրը
-    </div>
-
-    <div class="countdown">
-
-        <div class="time-box">
-            <div class="time-number" id="days">0</div>
-            <div class="time-label">ՕՐ</div>
-        </div>
-
-        <div class="time-box">
-            <div class="time-number" id="hours">0</div>
-            <div class="time-label">ԺԱՄ</div>
-        </div>
-
-        <div class="time-box">
-            <div class="time-number" id="minutes">0</div>
-            <div class="time-label">ՐՈՊԵ</div>
-        </div>
-
-        <div class="time-box">
-            <div class="time-number" id="seconds">0</div>
-            <div class="time-label">ՎԱՅՐԿՅԱՆ</div>
-        </div>
-
-    </div>
-
-    <div class="scroll">
-        ↓ scroll ↓
-    </div>
-
+  </div>
 </section>
 
-<button class="music-btn" onclick="toggleMusic()">
-    ♫
-</button>
+<!-- ═══════════════════ ABOUT -->
+<section class="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-label">Երեկոյի մասին</span>
+        <h2 class="section-heading">Մի երեկո,<br/><em>որ կմնա սրտում</em></h2>
+        <p class="body-text">
+        
 
-<audio id="music" loop>
-    <source src="allofme.mp3" type="audio/mp3">
-</audio>
+      <!-- Heart botanical illustration -->
+      <div class="heart-illustration reveal">
+        <svg viewBox="0 0 360 380" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="hGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#B25C40" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#1e1c1a" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="bigHeart" cx="50%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#d4a898"/>
+              <stop offset="55%" stop-color="#C19386"/>
+              <stop offset="100%" stop-color="#8a5a50"/>
+            </radialGradient>
+            <radialGradient id="midHeart" cx="50%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#cc7a5e"/>
+              <stop offset="55%" stop-color="#B25C40"/>
+              <stop offset="100%" stop-color="#7a3a28"/>
+            </radialGradient>
+          </defs>
 
-<script>
+          <!-- Ambient glow -->
+          <circle cx="180" cy="180" r="160" fill="url(#hGlow)"/>
 
-/* COUNTDOWN */
+          <!-- Outer ring -->
+          <circle cx="180" cy="175" r="138" fill="none" stroke="rgba(193,147,134,0.12)" stroke-width="1"/>
+          <circle cx="180" cy="175" r="125" fill="none" stroke="rgba(193,147,134,0.08)" stroke-width="0.7"/>
 
-const weddingDate =
-new Date("October 17, 2026 14:00:00").getTime();
+          <!-- Stem -->
+          <path d="M180 295 Q178 330 175 350" stroke="#616657" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Small leaves on stem -->
+          <path d="M178 318 Q160 308 158 295 Q170 298 178 318Z" fill="#909483" opacity="0.6"/>
+          <path d="M180 332 Q198 320 202 307 Q190 312 180 332Z" fill="#909483" opacity="0.5"/>
 
-setInterval(function(){
+          <!-- Large central heart -->
+          <g transform="translate(180,175)">
+            <path d="M0 88 C0 88 -95 32 -95 -28 A47.5 47.5 0 0 1 0 -15 A47.5 47.5 0 0 1 95 -28 C95 32 0 88 0 88Z"
+                  fill="url(#bigHeart)" opacity="0.95"/>
+            <!-- Highlight -->
+            <path d="M-30 -35 Q-15 -52 0 -48" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </g>
 
-let now = new Date().getTime();
+          <!-- Outline heart behind (larger) -->
+          <g transform="translate(180,172)">
+            <path d="M0 108 C0 108 -115 38 -115 -34 A57.5 57.5 0 0 1 0 -18 A57.5 57.5 0 0 1 115 -34 C115 38 0 108 0 108Z"
+                  fill="none" stroke="#B25C40" stroke-width="1.2" opacity="0.25"/>
+          </g>
 
-let distance = weddingDate - now;
+          <!-- Small accent hearts -->
+          <g transform="translate(100,108)">
+            <path d="M0 30 C0 30 -32 11 -32 -9 A16 16 0 0 1 0 -4 A16 16 0 0 1 32 -9 C32 11 0 30 0 30Z"
+                  fill="url(#midHeart)" opacity="0.7"/>
+          </g>
+          <g transform="translate(260,112)">
+            <path d="M0 28 C0 28 -30 10 -30 -8 A15 15 0 0 1 0 -4 A15 15 0 0 1 30 -8 C30 10 0 28 0 28Z"
+                  fill="#C19386" opacity="0.65"/>
+          </g>
 
-document.getElementById("days").innerHTML =
-Math.floor(distance/(1000*60*60*24));
+          <!-- Tiny scattered hearts -->
+          <g transform="translate(78,170)">
+            <path d="M0 14 C0 14 -15 5 -15 -4 A7.5 7.5 0 0 1 0 -2 A7.5 7.5 0 0 1 15 -4 C15 5 0 14 0 14Z"
+                  fill="#D1D2D4" opacity="0.4"/>
+          </g>
+          <g transform="translate(282,165)">
+            <path d="M0 14 C0 14 -15 5 -15 -4 A7.5 7.5 0 0 1 0 -2 A7.5 7.5 0 0 1 15 -4 C15 5 0 14 0 14Z"
+                  fill="#909483" opacity="0.45"/>
+          </g>
+          <g transform="translate(145,82)">
+            <path d="M0 11 C0 11 -12 4 -12 -3 A6 6 0 0 1 0 -1 A6 6 0 0 1 12 -3 C12 4 0 11 0 11Z"
+                  fill="#B25C40" opacity="0.5"/>
+          </g>
+          <g transform="translate(215,78)">
+            <path d="M0 11 C0 11 -12 4 -12 -3 A6 6 0 0 1 0 -1 A6 6 0 0 1 12 -3 C12 4 0 11 0 11Z"
+                  fill="#C19386" opacity="0.5"/>
+          </g>
 
-document.getElementById("hours").innerHTML =
-Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-
-document.getElementById("minutes").innerHTML =
-Math.floor((distance%(1000*60*60))/(1000*60));
-
-document.getElementById("seconds").innerHTML =
-Math.floor((distance%(1000*60))/1000);
-
-},1000);
-
-/* MUSIC */
-
-function toggleMusic(){
-
-let music =
-document.getElementById("music");
-
-if(music.paused){
-    music.play();
-}
-else{
-    music.pause();
-}
-
-}
-
-/* SOFT HEARTS */
-
-setInterval(function(){
-
-let heart =
-document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="♥";
-
-heart.style.left =
-Math.random()*100+"vw";
-
-heart.style.fontSize =
-(10+Math.random()*15)+"px";
-
-heart.style.animationDuration =
-(8+Math.random()*8)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},16000);
-
-},1200);
-
-</script>
-<!-- RSVP -->
-<section class="rsvp" id="rsvp">
-    <div class="container">
-        <h2>RSVP</h2>
-        <p>Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև 01.10.2026</p>
-
-        <form class="rsvp-form">
-            <input type="text" placeholder="Անուն, Ազգանուն" required>
-
-            <select required>
-                <option value="">Կհաճախե՞ք</option>
-                <option>Այո, սիրով կմասնակցեմ</option>
-                <option>Ցավոք, չեմ կարողանա ներկա գտնվել</option>
-            </select>
-
-            <textarea placeholder="Մաղթանք կամ մեկնաբանություն"></textarea>
-
-            <button type="submit">
-                Հաստատել
-            </button>
-        </form>
+          <!-- Decorative dots -->
+          <circle cx="130" cy="295" r="2.5" fill="#C19386" opacity="0.4"/>
+          <circle cx="200" cy="310" r="2" fill="#B25C40" opacity="0.35"/>
+          <circle cx="165" cy="340" r="1.8" fill="#909483" opacity="0.4"/>
+        </svg>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- MAP -->
-<section class="location">
-    <h2>Վայր</h2>
-
-    <div class="location-card">
-        <h3>Պսակադրություն — 14:00</h3>
-        <p>Սուրբ եկեղեցի</p>
+<!-- ═══════════════════ DETAILS -->
+<section class="details">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Կարևոր մանրամասներ</span>
+      <h2 class="section-heading">Ամեն ինչ,<br/><em>ինչ պետք է իմանաք</em></h2>
     </div>
-
-    <div class="location-card">
-        <h3>Հանդիսություն — 16:30</h3>
-        <p>Հարսանյաց սրահ</p>
+    <div class="details-cards">
+      <div class="detail-card reveal">
+        <svg class="detail-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="28" height="26" rx="1" stroke="#B25C40" stroke-width="1.2"/>
+          <line x1="6" y1="17" x2="34" y2="17" stroke="#B25C40" stroke-width="1"/>
+          <line x1="14" y1="6" x2="14" y2="14" stroke="#B25C40" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="26" y1="6" x2="26" y2="14" stroke="#B25C40" stroke-width="1.2" stroke-linecap="round"/>
+          <rect x="13" y="22" width="5" height="4" rx="0.5" fill="#B25C40" opacity="0.6"/>
+          <rect x="22" y="22" width="5" height="4" rx="0.5" fill="#B25C40" opacity="0.4"/>
+          <rect x="13" y="29" width="5" height="4" rx="0.5" fill="#B25C40" opacity="0.3"/>
+        </svg>
+        <span class="detail-label">Ամսաթիվ և ժամ</span>
+        <p class="detail-value">Շաբաթ<br/>17 Հոկտեմբեր 2026</p>
+        <p class="detail-sub"> Սկիզբը՝ 18:30-ին</p>
+      </div>
+      <div class="detail-card reveal">
+        <svg class="detail-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4C14.477 4 10 8.477 10 14c0 9 10 22 10 22s10-13 10-22c0-5.523-4.477-10-10-10Z" stroke="#B25C40" stroke-width="1.2"/>
+          <circle cx="20" cy="14" r="4" stroke="#B25C40" stroke-width="1.1"/>
+        </svg>
+        <span class="detail-label">Վայր</span>
+        <p class="detail-value">Տոնական<br/>դահլիճ</p>
+        <p class="detail-sub">Երևան, Հայաստան</p>
+      </div>
+      <div class="detail-card reveal">
+        <svg class="detail-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="13" stroke="#B25C40" stroke-width="1.2"/>
+          <polyline points="20,10 20,20 27,26" stroke="#B25C40" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+       
+      </div>
     </div>
-
-    <div class="map">
-        <iframe
-            src="https://maps.google.com/maps?q=Yerevan&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            loading="lazy">
-        </iframe>
-    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══════════════════ DRESS CODE -->
+<section class="dress">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Հագուստի կոդ</span>
+      <h2 class="section-heading" style="text-align:center">Էլեգանտ <em>երեկոյան</em></h2>
+      <p class="body-text" style="text-align:center;max-width:480px;margin:22px auto 0">
+      Հագեք այն հագուստը, որով Ձեզ կզգաք առավել հարմարավետ։ Միայն խնդրում ենք հարգել հարսնացուի տոնը և թույլ տալ, որ այդ օրը ճերմակ կրի միայն նա։
+      </p>
+    </div>
+   
+</section>
+
+<!-- ═══════════════════ RSVP -->
+<section class="rsvp-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Հաստատեք Ձեր մասնակցությունը</span>
+      <h2 class="section-heading" style="text-align:center">Կգա՞ք <em>մեզ մոտ</em></h2>
+      <p class="body-text" style="text-align:center;max-width:440px;margin:18px auto 0">
+        Խնդրում ենք հաստատել ձեր ներկայությունը մինչև Հոկտեմբերի 5-ը։ Ուրախությամբ կսպասենք ձեզ։
+      </p>
+    </div>
+    <form class="rsvp-form reveal" onsubmit="handleRSVP(event)">
+      <input type="text" placeholder="Ձեր անուն ազգանունը" required/>
+      <input type="email" placeholder="Էլ. հասցե" required/>
+      <select>
+        <option value="" disabled selected>Ներկայություն</option>
+        <option value="yes">Սիրով կգամ</option>
+        <option value="no">Ցավոք չեմ կարող</option>
+      </select>
+      <select>
+      </select>
+      <button type="submit" class="btn-rsvp">Հաստատել ներկայությունը</button>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER -->
 <footer>
-    <div class="quote">
-        «Դու իմ վերջինը՝ գիտակցաբար,<br>
-        Եվ իմ միակը՝ ճակատագրով...»
-    </div>
-
-    <h2>Արման & Հայկուհի</h2>
-
-    <p>17.10.2026</p>
+  <p class="footer-text">&nbsp;·&nbsp; Արման &amp; Հայկուհի &nbsp;·&nbsp; 17.10.2026</p>
 </footer>
 
-<!-- MUSIC BUTTON -->
-<div class="music-btn" id="musicBtn">
-    ♪
-</div>
-
-<audio id="bgMusic" loop>
-    <source src="allofme.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-
-const weddingDate = new Date("Oct 17, 2026 14:00:00").getTime();
-
-setInterval(function(){
-
-    const now = new Date().getTime();
-
-    const distance = weddingDate - now;
-
-    const days = Math.floor(distance / (1000*60*60*24));
-    const hours = Math.floor(
-        (distance % (1000*60*60*24))
-        /(1000*60*60)
-    );
-
-    const minutes = Math.floor(
-        (distance % (1000*60*60))
-        /(1000*60)
-    );
-
-    const seconds = Math.floor(
-        (distance % (1000*60))
-        /1000
-    );
-
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
-
-},1000);
-
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-
-musicBtn.addEventListener("click",function(){
-
-    if(music.paused){
-        music.play();
-        musicBtn.classList.add("playing");
-    }else{
-        music.pause();
-        musicBtn.classList.remove("playing");
-    }
-
-});
-
-document.addEventListener("click", function(){
-
-    if(music.paused){
-        music.play();
-        musicBtn.classList.add("playing");
-    }
-
-},{once:true});
-
-function createHeart(){
-
-    const heart = document.createElement("div");
-
-    heart.classList.add("heart");
-
-    heart.style.left = Math.random()*100 + "vw";
-
-    heart.style.animationDuration =
-        Math.random()*3 + 4 + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },7000);
-
-}
-
-setInterval(createHeart,700);
-
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 75);
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
 
-});
-
-document.querySelectorAll("section").forEach(section=>{
-    observer.observe(section);
-});
-
-document.querySelector(".rsvp-form")
-.addEventListener("submit",function(e){
-
+  function handleRSVP(e) {
     e.preventDefault();
-
-    alert("Շնորհակալություն։ Ձեր պատասխանը գրանցվել է։");
-
-});
-
+    const btn = e.target.querySelector('.btn-rsvp');
+    btn.textContent = 'Շնորհակալություն ♥';
+    btn.style.borderColor = '#909483';
+    btn.style.color = '#909483';
+    btn.disabled = true;
+  }
 </script>
-
 </body>
 </html>
