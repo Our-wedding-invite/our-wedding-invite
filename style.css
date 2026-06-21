@@ -1,0 +1,36 @@
+body{
+    background:#D1D2D4;
+}
+
+.hero-overlay{
+    background:linear-gradient(
+        rgba(209,210,212,.75),
+        rgba(193,147,134,.45)
+    );
+}
+
+.hero h1{
+    color:#616657;
+}
+
+.quote{
+    color:#B25C40;
+}
+
+.date{
+    color:#616657;
+}
+
+.card{
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(18px);
+}
+
+button{
+    background:#B25C40;
+    color:white;
+}
+
+button:hover{
+    background:#C19386;
+}
