@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Արման ♥ Հայկուհի</title>
 
 <style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 /* RESET */
 * {
     margin: 0;
@@ -202,7 +200,28 @@ section {
 <!-- COUNTDOWN (placeholder) -->
 <section>
     <span class="section-label">Մնացել է</span>
-    <p>Countdown will be added</p>
+    <div class="countdown">
+
+        <div class="time-box">
+            <div class="time-number" id="days">0</div>
+            <div class="time-label">ՕՐ</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="hours">0</div>
+            <div class="time-label">ԺԱՄ</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="minutes">0</div>
+            <div class="time-label">ՐՈՊԵ</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="seconds">0</div>
+            <div class="time-label">ՎԱՅՐԿՅԱՆ</div>
+        </div>
+
 </section>
 
 <!-- TIMELINE -->
@@ -363,6 +382,19 @@ heart.style.left=Math.random()*100+"vw";
 heart.style.animationDuration=(3+Math.random()*5)+"s";
 document.body.appendChild(heart);
 
+    .music-btn{
+    position:scrolling;
+    right:30px;
+    bottom:30px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(20px);
+    font-size:22px;
+    cursor:pointer;
+    z-index:1000;
 setTimeout(()=>heart.remove(),8000);
 }
 setInterval(createHeart,400);
