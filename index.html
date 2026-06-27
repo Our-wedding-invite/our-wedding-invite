@@ -197,11 +197,10 @@ section {
     <p>Սիրով հրավիրում ենք Ձեզ կիսելու մեր կյանքի ամենաերջանիկ օրը։</p>
 </section>
 
-<!-- COUNTDOWN (placeholder) -->
 <section>
     <span class="section-label">Մնացել է</span>
-    <div class="countdown">
 
+    <div class="countdown">
         <div class="time-box">
             <div class="time-number" id="days">0</div>
             <div class="time-label">ՕՐ</div>
@@ -221,7 +220,8 @@ section {
             <div class="time-number" id="seconds">0</div>
             <div class="time-label">ՎԱՅՐԿՅԱՆ</div>
         </div>
-
+    </div>
+</section>
 </section>
 
 <!-- TIMELINE -->
@@ -236,10 +236,14 @@ section {
 <section class="map">
     <span class="section-label">Location</span>
 
-    <iframe 
-        src="https://maps.app.goo.gl/2wPnJxEaD8zYTA7h6..." 
-        loading="lazy">
-    </iframe>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.2331695993257!2d45.41817007591363!3d39.779322371549284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40157a1b7c41591f%3A0x4754872a2aaaa7fd!2z0JDRgNC60LDQt9GB0LrQsNGPINGG0LXRgNC60L7QstGMINCh0LLRj9GC0L7Qs9C-INCa0YDQtdGB0YLQsA!5e0!3m2!1sru!2sam!4v1782562971757!5m2!1sru!2sam" 
+       width="600" 
+       height="450" 
+       style="border:0;" 
+       allowfullscreen="" 
+       loading="lazy" 
+       referrerpolicy="strict-origin-when-cross-origin">
+   </iframe>
 </section>
 
     <div class="timeline-item">
@@ -250,10 +254,14 @@ section {
 <section class="map">
     <span class="section-label">Location</span>
 
-    <iframe 
-        src="https://maps.app.goo.gl/ShqGwfu1Lpq4E9cP8..." 
-        loading="lazy">
-    </iframe>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d619.1492402096949!2d45.473236145050095!3d39.68893890705247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40159dbabad319af%3A0x3ffb13d43fd75a27!2sJermuk%20Highway%2C%20Vayk%203801!5e0!3m2!1sru!2sam!4v1782562888969!5m2!1sru!2sam" 
+       width="600" 
+       height="450" 
+       style="border:0;" 
+       allowfullscreen="" 
+       loading="lazy" 
+       referrerpolicy="strict-origin-when-cross-origin">
+       </iframe>
 </section>
 
 <!-- PHOTO -->
@@ -289,11 +297,16 @@ section {
             <option>Սիրով կմասնակցեմ</option>
             <option>Ցավոք, չեմ կարող</option>
         </select>
- <select name="ՈՒմ կողմից եք հրավիրված" required>
-            <option disabled selected>Կողմ</option>
-            <option>Արման</option>
-            <option>Հայկուհի</option>
-            <input type="text" name="name" placeholder="Հյուրերի քանակ" required>
+ <select name="side" required>
+    <option disabled selected>Ու՞մ կողմից եք հրավիրված</option>
+    <option>Արման</option>
+    <option>Հայկուհի</option>
+</select>
+
+<input
+    type="number"
+    name="guests"
+    placeholder="Հյուրերի քանակ">
         </select>
 
         <button type="submit">Հաստատել</button>
@@ -375,30 +388,104 @@ days+" օր "+hours+" ժ "+minutes+" ր "+seconds+" վ";
 
 // floating hearts
 function createHeart(){
-const heart=document.createElement("div");
-heart.classList.add("heart");
-heart.innerHTML="❤";
-heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(3+Math.random()*5)+"s";
-document.body.appendChild(heart);
+<script>
 
-    .music-btn{
-    position:scrolling;
-    right:30px;
-    bottom:30px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    border:none;
-    background:rgba(255,255,255,.7);
-    backdrop-filter:blur(20px);
-    font-size:22px;
-    cursor:pointer;
-    z-index:1000;
-setTimeout(()=>heart.remove(),8000);
+const music = document.getElementById("music");
+let playing = false;
+
+function toggleMusic(){
+    if(playing){
+        music.pause();
+    }else{
+        music.play();
+    }
+    playing = !playing;
 }
-setInterval(createHeart,400);
+
+/* RSVP */
+
+const form = document.getElementById("rsvpForm");
+
+form.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action,{
+        method:"POST",
+        body:data,
+        headers:{
+            Accept:"application/json"
+        }
+    });
+
+    const button = form.querySelector("button");
+
+    if(response.ok){
+        button.innerHTML="Շնորհակալություն ♥";
+        button.disabled=true;
+        form.reset();
+    }else{
+        button.innerHTML="Սխալ, փորձեք կրկին";
+    }
+});
+
+/* COUNTDOWN */
+
+const weddingDate = new Date("October 17, 2026 14:00:00").getTime();
+
+setInterval(function(){
+
+    const now = new Date().getTime();
+
+    const diff = weddingDate - now;
+
+    const days = Math.floor(diff/(1000*60*60*24));
+
+    const hours = Math.floor(
+        (diff%(1000*60*60*24))/
+        (1000*60*60)
+    );
+
+    const minutes = Math.floor(
+        (diff%(1000*60*60))/
+        (1000*60)
+    );
+
+    const seconds = Math.floor(
+        (diff%(1000*60))/1000
+    );
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+/* FLOATING HEARTS */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "♥";
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.animationDuration =
+        (4 + Math.random()*4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,1200);
+
 </script>
-    
-</body>
-</html>
