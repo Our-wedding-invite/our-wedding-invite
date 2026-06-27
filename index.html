@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="hy">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Արման ♡ Հայկուհի</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root{
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Արման ♡ Հայկուհի
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+   :root {
     --silver:#D1D2D4;
     --nude:#C19386;
     --olive:#616657;
@@ -20,75 +20,979 @@
     --text:#2f302b;
     --white:#ffffff;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--cream);color:var(--text);overflow-x:hidden;font-family:"Montserrat",Arial,sans-serif;line-height:1.7;}
-img{max-width:100%;display:block;} a{color:inherit;}
-.loader{position:fixed;inset:0;background:linear-gradient(135deg,#fbf7f3,#eaded8);z-index:9999;display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity 1s ease,visibility 1s ease;}
-.loader.hidden{opacity:0;visibility:hidden;}
-.loader-content{animation:loaderFade 1.8s ease both;}
-.loader-names{font-family:"Great Vibes",cursive;font-size:clamp(3rem,8vw,6rem);color:var(--terracotta);font-weight:400;}
-.loader-date{margin-top:14px;letter-spacing:6px;font-size:clamp(.85rem,2vw,1rem);color:var(--olive);}
-.loader-text{margin-top:18px;font-family:"Cormorant Garamond",serif;font-size:clamp(1.2rem,3vw,1.8rem);color:var(--nude);}
-@keyframes loaderFade{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.section{padding:clamp(70px,9vw,130px) 24px;}
-.section-inner{width:min(1180px,100%);margin:0 auto;text-align:center;}
-.section-label{display:block;margin-bottom:16px;color:var(--terracotta);letter-spacing:3px;text-transform:uppercase;font-size:.78rem;font-weight:500;}
-.section-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:400;color:var(--olive);margin-bottom:20px;}
-.text-block{max-width:780px;margin:0 auto;font-size:clamp(1rem,1.5vw,1.16rem);}
-.hero{position:relative;min-height:100svh;display:flex;justify-content:center;align-items:flex-end;text-align:center;color:white;overflow:hidden;padding:0 24px 8vh;}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;z-index:-3;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.15),rgba(0,0,0,.35),rgba(0,0,0,.62)),rgba(0,0,0,.18);z-index:-2;}
-.hero-content{width:min(980px,100%);animation:heroRise 1.4s ease both .6s;}
-.hero-name{font-family:"Great Vibes",cursive;font-size:clamp(4rem,11vw,9.5rem);line-height:.85;font-weight:400;text-shadow:0 10px 35px rgba(0,0,0,.35);}
-.hero-heart{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,5vw,4rem);color:#f1d2c4;line-height:1.25;margin:8px 0;}
-.quote{margin-top:24px;font-family:"Cormorant Garamond",serif;font-size:clamp(1.15rem,2.2vw,1.9rem);line-height:1.45;color:#fff8f4;}
-.date{margin-top:22px;font-size:clamp(.95rem,2vw,1.25rem);letter-spacing:6px;color:#fff;}
-@keyframes heroRise{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-.countdown{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:18px;max-width:760px;margin:36px auto 0;}
-.time-box{background:rgba(193,147,134,.92);color:white;padding:28px 16px;border-radius:28px;box-shadow:0 18px 45px rgba(97,102,87,.15);}
-.time-number{font-family:"Cormorant Garamond",serif;font-size:clamp(2.4rem,5vw,4rem);line-height:1;}.time-label{margin-top:8px;letter-spacing:2px;font-size:.78rem;}
-.timeline-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:44px;}
-.venue-card{background:white;border-radius:34px;overflow:hidden;box-shadow:0 22px 60px rgba(97,102,87,.16);display:flex;flex-direction:column;}
-.venue-placeholder{height:330px;background:linear-gradient(135deg,rgba(193,147,134,.18),rgba(144,148,131,.18)),var(--silver);display:flex;align-items:center;justify-content:center;color:var(--olive);font-size:.95rem;letter-spacing:1px;text-align:center;padding:20px;}
-.venue-placeholder img{width:100%;height:100%;object-fit:cover;}.venue-content{padding:34px 28px 38px;}.venue-time{color:var(--terracotta);letter-spacing:3px;font-weight:600;font-size:.9rem;}.venue-title{margin-top:10px;font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--olive);}.venue-address{margin-top:8px;color:#57584f;}
-.map-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:24px;padding:13px 28px;border-radius:999px;background:var(--terracotta);color:white;text-decoration:none;font-size:.95rem;transition:transform .3s ease,box-shadow .3s ease,background .3s ease;}.map-btn:hover{transform:translateY(-4px);box-shadow:0 14px 26px rgba(178,92,64,.25);background:#9f4f37;}
-.gallery-shell{position:relative;width:min(980px,100%);margin:46px auto 0;border-radius:34px;overflow:hidden;box-shadow:0 24px 65px rgba(97,102,87,.18);background:white;}.gallery-track{display:flex;transition:transform .65s ease;}.gallery-slide{min-width:100%;height:clamp(360px,56vw,650px);background:linear-gradient(135deg,rgba(193,147,134,.20),rgba(144,148,131,.18)),#ece8e3;display:flex;align-items:center;justify-content:center;color:var(--olive);text-align:center;padding:24px;}.gallery-slide img{width:100%;height:100%;object-fit:cover;}
-.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:none;border-radius:50%;background:rgba(255,255,255,.78);backdrop-filter:blur(10px);color:var(--terracotta);font-size:26px;cursor:pointer;z-index:2;}.gallery-btn.prev{left:18px;}.gallery-btn.next{right:18px;}.gallery-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:2;}.gallery-dot{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,255,255,.55);cursor:pointer;}.gallery-dot.active{background:white;}
-.photo-card{width:min(840px,100%);margin:0 auto;border-radius:34px;overflow:hidden;box-shadow:0 22px 58px rgba(97,102,87,.18);}.photo-card img{width:100%;max-height:760px;object-fit:cover;}
-.rsvp-form{width:min(540px,100%);margin:42px auto 0;display:grid;gap:14px;}.rsvp-form input,.rsvp-form select{width:100%;padding:15px 17px;border:1px solid rgba(97,102,87,.22);border-radius:16px;background:white;font-size:1rem;color:var(--text);outline:none;}.rsvp-form input:focus,.rsvp-form select:focus{border-color:var(--nude);}.rsvp-form button{padding:16px;border:none;border-radius:999px;background:var(--terracotta);color:white;font-size:1rem;cursor:pointer;transition:.3s ease;}.rsvp-form button:hover{background:#9f4f37;transform:translateY(-2px);}.form-message{margin-top:14px;color:var(--olive);}
-.music-btn{position:fixed;right:24px;bottom:24px;width:62px;height:62px;border:none;border-radius:50%;background:rgba(255,255,255,.75);backdrop-filter:blur(16px);color:var(--terracotta);box-shadow:0 14px 35px rgba(97,102,87,.22);font-size:24px;cursor:pointer;z-index:1000;}
-.heart{position:fixed;bottom:-50px;color:#eaa1a9;pointer-events:none;z-index:5;animation:floatHeart linear forwards;}@keyframes floatHeart{0%{transform:translateY(0) translateX(0) rotate(0deg);}25%{transform:translateY(-28vh) translateX(-32px) rotate(90deg);}50%{transform:translateY(-55vh) translateX(45px) rotate(180deg);}75%{transform:translateY(-85vh) translateX(-22px) rotate(270deg);}100%{transform:translateY(-125vh) translateX(34px) rotate(360deg);}}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease;}.reveal.show{opacity:1;transform:translateY(0);}
-@media (min-width:1400px){.hero{padding-bottom:9vh;}.section{padding-left:40px;padding-right:40px;}}
-@media (max-width:1024px){.timeline-grid{grid-template-columns:1fr;max-width:720px;margin-left:auto;margin-right:auto;}.venue-placeholder{height:360px;}}
-@media (max-width:768px){.hero{padding-bottom:7vh;}.hero-bg{object-position:center top;}.countdown{grid-template-columns:repeat(2,minmax(130px,1fr));}.section{padding:70px 18px;}.venue-placeholder{height:260px;}.gallery-btn{width:40px;height:40px;font-size:22px;}}
-@media (max-width:430px){.countdown{gap:12px;}.time-box{min-width:0;padding:22px 10px;}.music-btn{width:54px;height:54px;right:16px;bottom:16px;}.date,.loader-date{letter-spacing:4px;}}
-</style>
-</head>
-<body>
-<div class="loader" id="loader"><div class="loader-content"><div class="loader-names">Արման ♡ Հայկուհի</div><div class="loader-date">17 • 10 • 2026</div><div class="loader-text">Սիրով հրավիրում ենք</div></div></div>
-<audio id="music" loop><source src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/John_Legend_-_All_of_Me_Official_Video.mp3?v=1782028295" type="audio/mpeg"></audio>
-<button class="music-btn" onclick="toggleMusic()" aria-label="Play or pause music">♫</button>
-<header class="hero"><div class="hero-overlay"></div><img class="hero-bg" src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_6936.heic?v=1781985529" alt="Արման և Հայկուհի"><div class="hero-content"><h1 class="hero-name">Արման</h1><div class="hero-heart">♡</div><h1 class="hero-name">Հայկուհի</h1><p class="quote">Դու իմ վերջինը՝ գիտակցաբար,<br>Եվ իմ միակը՝ ճակատագրով...</p><div class="date">17 • 10 • 2026</div></div></header>
-<main>
-<section class="section reveal"><div class="section-inner"><span class="section-label">Սիրելի՛ հյուրեր</span><h2 class="section-title">Մեր սիրո տոնը</h2><p class="text-block">Սիրելի հարազատներ և ընկերներ, սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր կյանքի ամենաերջանիկ օրվան և ստեղծելու անմոռանալի հուշեր մեր նոր ստեղծվող ընտանիքի հիմքերն առավել ամուր դարձնելու համար։</p></div></section>
-<section class="section reveal"><div class="section-inner"><span class="section-label">Մեր սիրո տոնին մնացել է</span><h2 class="section-title">Countdown</h2><div class="countdown"><div class="time-box"><div class="time-number" id="days">0</div><div class="time-label">ՕՐ</div></div><div class="time-box"><div class="time-number" id="hours">0</div><div class="time-label">ԺԱՄ</div></div><div class="time-box"><div class="time-number" id="minutes">0</div><div class="time-label">ՐՈՊԵ</div></div><div class="time-box"><div class="time-number" id="seconds">0</div><div class="time-label">ՎԱՅՐԿՅԱՆ</div></div></div></div></section>
-<section class="section reveal"><div class="section-inner"><span class="section-label">Օրվա ծրագիր</span><h2 class="section-title">Wedding Day</h2><div class="timeline-grid"><article class="venue-card"><div class="venue-placeholder"><!-- To add church photo, replace this whole span with: <img src="YOUR_SHOPIFY_CHURCH_PHOTO_LINK" alt="Սուրբ Խաչ Եկեղեցի"> --><span>PASTE CHURCH PHOTO HERE</span></div><div class="venue-content"><div class="venue-time">14:00</div><h3 class="venue-title">Պսակադրություն</h3><p class="venue-address">Սուրբ Խաչ Եկեղեցի (Արկազ)</p><a class="map-btn" href="https://maps.app.goo.gl/2wPnJxEaD8zYTA7h6" target="_blank" rel="noopener">Բացել քարտեզը</a></div></article><article class="venue-card"><div class="venue-placeholder"><!-- To add restaurant photo, replace this whole span with: <img src="YOUR_SHOPIFY_RESTAURANT_PHOTO_LINK" alt="Լիդեր Կոմպլեքս"> --><span>PASTE RESTAURANT PHOTO HERE</span></div><div class="venue-content"><div class="venue-time">18:30</div><h3 class="venue-title">Հանդիսություն</h3><p class="venue-address">Լիդեր Կոմպլեքս</p><a class="map-btn" href="https://maps.app.goo.gl/ShqGwfu1Lpq4E9cP8" target="_blank" rel="noopener">Բացել քարտեզը</a></div></article></div></div></section>
-<section class="section reveal"><div class="section-inner"><span class="section-label">Մեր լուսանկարները</span><h2 class="section-title">Gallery</h2><div class="gallery-shell" id="gallery"><div class="gallery-track" id="galleryTrack"><div class="gallery-slide"><!-- Replace this span with: <img src="YOUR_SHOPIFY_GALLERY_IMAGE_1" alt="Gallery photo 1"> --><span>PASTE GALLERY PHOTO 1 HERE</span></div><div class="gallery-slide"><!-- Replace this span with: <img src="YOUR_SHOPIFY_GALLERY_IMAGE_2" alt="Gallery photo 2"> --><span>PASTE GALLERY PHOTO 2 HERE</span></div><div class="gallery-slide"><!-- Replace this span with: <img src="YOUR_SHOPIFY_GALLERY_IMAGE_3" alt="Gallery photo 3"> --><span>PASTE GALLERY PHOTO 3 HERE</span></div><div class="gallery-slide"><!-- Replace this span with: <img src="YOUR_SHOPIFY_GALLERY_IMAGE_4" alt="Gallery photo 4"> --><span>PASTE GALLERY PHOTO 4 HERE</span></div><div class="gallery-slide"><!-- Replace this span with: <img src="YOUR_SHOPIFY_GALLERY_IMAGE_5" alt="Gallery photo 5"> --><span>PASTE GALLERY PHOTO 5 HERE</span></div></div><button class="gallery-btn prev" type="button" onclick="moveSlide(-1)" aria-label="Previous photo">‹</button><button class="gallery-btn next" type="button" onclick="moveSlide(1)" aria-label="Next photo">›</button><div class="gallery-dots" id="galleryDots"></div></div></div></section>
-<section class="section reveal"><div class="section-inner"><span class="section-label">Dress Code</span><h2 class="section-title">Տոնական հագուստ</h2><p class="text-block">Հագեք այն զգեստը, որով Ձեզ կզգաք հարմարավետ և ինքնավստահ։ Միայն խնդրում ենք հարգել հարսնացուի տոնը և թույլ տալ, որ այդ օրը սպիտակ զգեստ կրի միայն նա։</p></div></section>
-<section class="section reveal"><div class="section-inner"><div class="photo-card"><img src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_6946.heic?v=1782058705" alt="Արման և Հայկուհի"></div></div></section>
-<section class="section reveal"><div class="section-inner"><span class="section-label">RSVP</span><h2 class="section-title">Հաստատեք Ձեր ներկայությունը</h2><form class="rsvp-form" action="https://formspree.io/f/xvzjpqnk" method="POST" id="rsvpForm"><input name="name" placeholder="Անուն Ազգանուն" required><input name="phone" placeholder="Հեռախոսահամար"><select name="attendance" required><option value="">Ներկայություն</option><option>Սիրով կմասնակցեմ</option><option>Ցավոք չեմ կարող</option></select><select name="side" required><option value="">Ու՞մ կողմից եք հրավիրված</option><option>Արման</option><option>Հայկուհի</option></select><input type="number" name="guests" placeholder="Հյուրերի քանակ" min="1"><button type="submit">Հաստատել</button><p class="form-message" id="formMessage"></p></form></div></section>
-<section class="section reveal"><div class="section-inner"><h2 class="section-title">Սիրով սպասում ենք Ձեզ</h2><p class="text-block">Արման ♡ Հայկուհի<br>17 • 10 • 2026</p></div></section>
-</main>
-<script>
-const loader=document.getElementById("loader");window.addEventListener("load",function(){setTimeout(function(){loader.classList.add("hidden");},2400);});
-const music=document.getElementById("music");let playing=false;function toggleMusic(){if(playing){music.pause();}else{music.play().catch(function(){console.log("Music playback requires user interaction.");});}playing=!playing;}
-window.addEventListener("load",function(){const target=new Date(2026,9,17,14,0,0);function updateCountdown(){const now=new Date();let diff=target-now;if(diff<0){diff=0;}document.getElementById("days").textContent=Math.floor(diff/86400000);document.getElementById("hours").textContent=Math.floor((diff%86400000)/3600000);document.getElementById("minutes").textContent=Math.floor((diff%3600000)/60000);document.getElementById("seconds").textContent=Math.floor((diff%60000)/1000);}updateCountdown();setInterval(updateCountdown,1000);});
-const form=document.getElementById("rsvpForm");const formMessage=document.getElementById("formMessage");form.addEventListener("submit",async function(e){e.preventDefault();const button=form.querySelector("button");const originalText=button.textContent;button.textContent="Ուղարկվում է...";button.disabled=true;try{const data=new FormData(form);const response=await fetch(form.action,{method:"POST",body:data,headers:{Accept:"application/json"}});if(response.ok){formMessage.textContent="Շնորհակալություն, Ձեր պատասխանը ստացվել է ♡";form.reset();}else{formMessage.textContent="Չհաջողվեց ուղարկել։ Խնդրում ենք փորձել կրկին։";}}catch(error){formMessage.textContent="Չհաջողվեց ուղարկել։ Խնդրում ենք ստուգել ինտերնետ կապը։";}button.textContent=originalText;button.disabled=false;});
-function createHeart(){const heart=document.createElement("div");heart.className="heart";heart.innerHTML="♡";heart.style.left=Math.random()*100+"vw";heart.style.fontSize=(12+Math.random()*30)+"px";heart.style.opacity=0.25+Math.random()*0.65;heart.style.animationDuration=(5+Math.random()*8)+"s";document.body.appendChild(heart);setTimeout(function(){heart.remove();},13000);}setInterval(createHeart,320);
-const revealItems=document.querySelectorAll(".reveal");const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("show");}});},{threshold:0.15});revealItems.forEach(function(item){observer.observe(item);});
-let currentSlide=0;const track=document.getElementById("galleryTrack");const slides=document.querySelectorAll(".gallery-slide");const dotsContainer=document.getElementById("galleryDots");slides.forEach(function(_,index){const dot=document.createElement("button");dot.className="gallery-dot";dot.type="button";dot.setAttribute("aria-label","Go to gallery photo "+(index+1));dot.addEventListener("click",function(){goToSlide(index);});dotsContainer.appendChild(dot);});const dots=document.querySelectorAll(".gallery-dot");function updateGallery(){track.style.transform="translateX(-"+(currentSlide*100)+"%)";dots.forEach(function(dot,index){dot.classList.toggle("active",index===currentSlide);});}function goToSlide(index){currentSlide=index;if(currentSlide<0){currentSlide=slides.length-1;}if(currentSlide>=slides.length){currentSlide=0;}updateGallery();}function moveSlide(direction){goToSlide(currentSlide+direction);}updateGallery();setInterval(function(){moveSlide(1);},5000);let startX=0;track.addEventListener("touchstart",function(e){startX=e.touches[0].clientX;},{passive:true});track.addEventListener("touchend",function(e){const endX=e.changedTouches[0].clientX;const diff=startX-endX;if(Math.abs(diff)>50){if(diff>0){moveSlide(1);}else{moveSlide(-1);}}});
-</script>
-</body>
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    background:var(--cream);
+    color:var(--text);
+    overflow-x:hidden;
+    font-family:"Montserrat",Arial,sans-serif;
+    line-height:1.7;
+}
+
+img {
+    max-width:100%;
+    display:block;
+}
+
+a {
+    color:inherit;
+}
+
+.loader {
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#fbf7f3,#eaded8);
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transition:opacity 1s ease,visibility 1s ease;
+}
+
+.loader.hidden {
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-content {
+    animation:loaderFade 1.8s ease both;
+}
+
+.loader-names {
+    font-family:"Great Vibes",cursive;
+    font-size:clamp(3rem,8vw,6rem);
+    color:var(--terracotta);
+    font-weight:400;
+}
+
+.loader-date {
+    margin-top:14px;
+    letter-spacing:6px;
+    font-size:clamp(.85rem,2vw,1rem);
+    color:var(--olive);
+}
+
+.loader-text {
+    margin-top:18px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(1.2rem,3vw,1.8rem);
+    color:var(--nude);
+}
+
+@keyframes loaderFade {
+    from {
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.section {
+    padding:clamp(70px,9vw,130px) 24px;
+}
+
+.section-inner {
+    width:min(1180px,100%);
+    margin:0 auto;
+    text-align:center;
+}
+
+.section-label {
+    display:block;
+    margin-bottom:16px;
+    color:var(--terracotta);
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:.78rem;
+    font-weight:500;
+}
+
+.section-title {
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(2.2rem,5vw,4rem);
+    font-weight:400;
+    color:var(--olive);
+    margin-bottom:20px;
+}
+
+.text-block {
+    max-width:780px;
+    margin:0 auto;
+    font-size:clamp(1rem,1.5vw,1.16rem);
+}
+
+.hero {
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+    padding:0 24px 8vh;
+}
+
+.hero-bg {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 28%;
+    z-index:-3;
+}
+
+.hero-overlay {
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom,rgba(0,0,0,.15),rgba(0,0,0,.35),rgba(0,0,0,.62)),rgba(0,0,0,.18);
+    z-index:-2;
+}
+
+.hero-content {
+    width:min(980px,100%);
+    animation:heroRise 1.4s ease both .6s;
+}
+
+.hero-name {
+    font-family:"Great Vibes",cursive;
+    font-size:clamp(4rem,11vw,9.5rem);
+    line-height:.85;
+    font-weight:400;
+    text-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+.hero-heart {
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(2rem,5vw,4rem);
+    color:#f1d2c4;
+    line-height:1.25;
+    margin:8px 0;
+}
+
+.quote {
+    margin-top:24px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(1.15rem,2.2vw,1.9rem);
+    line-height:1.45;
+    color:#fff8f4;
+}
+
+.date {
+    margin-top:22px;
+    font-size:clamp(.95rem,2vw,1.25rem);
+    letter-spacing:6px;
+    color:#fff;
+}
+
+@keyframes heroRise {
+    from {
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.countdown {
+    display:grid;
+    grid-template-columns:repeat(4,minmax(120px,1fr));
+    gap:18px;
+    max-width:760px;
+    margin:36px auto 0;
+}
+
+.time-box {
+    background:rgba(193,147,134,.92);
+    color:white;
+    padding:28px 16px;
+    border-radius:28px;
+    box-shadow:0 18px 45px rgba(97,102,87,.15);
+}
+
+.time-number {
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(2.4rem,5vw,4rem);
+    line-height:1;
+}
+
+.time-label {
+    margin-top:8px;
+    letter-spacing:2px;
+    font-size:.78rem;
+}
+
+.timeline-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:32px;
+    margin-top:44px;
+}
+
+.venue-card {
+    background:white;
+    border-radius:34px;
+    overflow:hidden;
+    box-shadow:0 22px 60px rgba(97,102,87,.16);
+    display:flex;
+    flex-direction:column;
+}
+
+.venue-placeholder {
+    height:330px;
+    background:linear-gradient(135deg,rgba(193,147,134,.18),rgba(144,148,131,.18)),var(--silver);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--olive);
+    font-size:.95rem;
+    letter-spacing:1px;
+    text-align:center;
+    padding:20px;
+}
+
+.venue-placeholder img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.venue-content {
+    padding:34px 28px 38px;
+}
+
+.venue-time {
+    color:var(--terracotta);
+    letter-spacing:3px;
+    font-weight:600;
+    font-size:.9rem;
+}
+
+.venue-title {
+    margin-top:10px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(1.8rem,3vw,2.6rem);
+    font-weight:400;
+    color:var(--olive);
+}
+
+.venue-address {
+    margin-top:8px;
+    color:#57584f;
+}
+
+.map-btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:24px;
+    padding:13px 28px;
+    border-radius:999px;
+    background:var(--terracotta);
+    color:white;
+    text-decoration:none;
+    font-size:.95rem;
+    transition:transform .3s ease,box-shadow .3s ease,background .3s ease;
+}
+
+.map-btn:hover {
+    transform:translateY(-4px);
+    box-shadow:0 14px 26px rgba(178,92,64,.25);
+    background:#9f4f37;
+}
+
+.gallery-shell {
+    position:relative;
+    width:min(980px,100%);
+    margin:46px auto 0;
+    border-radius:34px;
+    overflow:hidden;
+    box-shadow:0 24px 65px rgba(97,102,87,.18);
+    background:white;
+}
+
+.gallery-track {
+    display:flex;
+    transition:transform .65s ease;
+}
+
+.gallery-slide {
+    min-width:100%;
+    height:clamp(360px,56vw,650px);
+    background:linear-gradient(135deg,rgba(193,147,134,.20),rgba(144,148,131,.18)),#ece8e3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--olive);
+    text-align:center;
+    padding:24px;
+}
+
+.gallery-slide img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.gallery-btn {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(10px);
+    color:var(--terracotta);
+    font-size:26px;
+    cursor:pointer;
+    z-index:2;
+}
+
+.gallery-btn.prev {
+    left:18px;
+}
+
+.gallery-btn.next {
+    right:18px;
+}
+
+.gallery-dots {
+    position:absolute;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:9px;
+    z-index:2;
+}
+
+.gallery-dot {
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.55);
+    cursor:pointer;
+}
+
+.gallery-dot.active {
+    background:white;
+}
+
+.photo-card {
+    width:min(840px,100%);
+    margin:0 auto;
+    border-radius:34px;
+    overflow:hidden;
+    box-shadow:0 22px 58px rgba(97,102,87,.18);
+}
+
+.photo-card img {
+    width:100%;
+    max-height:760px;
+    object-fit:cover;
+}
+
+.rsvp-form {
+    width:min(540px,100%);
+    margin:42px auto 0;
+    display:grid;
+    gap:14px;
+}
+
+.rsvp-form input,.rsvp-form select {
+    width:100%;
+    padding:15px 17px;
+    border:1px solid rgba(97,102,87,.22);
+    border-radius:16px;
+    background:white;
+    font-size:1rem;
+    color:var(--text);
+    outline:none;
+}
+
+.rsvp-form input:focus,.rsvp-form select:focus {
+    border-color:var(--nude);
+}
+
+.rsvp-form button {
+    padding:16px;
+    border:none;
+    border-radius:999px;
+    background:var(--terracotta);
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.rsvp-form button:hover {
+    background:#9f4f37;
+    transform:translateY(-2px);
+}
+
+.form-message {
+    margin-top:14px;
+    color:var(--olive);
+}
+
+.music-btn {
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:62px;
+    height:62px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(16px);
+    color:var(--terracotta);
+    box-shadow:0 14px 35px rgba(97,102,87,.22);
+    font-size:24px;
+    cursor:pointer;
+    z-index:1000;
+}
+
+.heart {
+    position:fixed;
+    bottom:-50px;
+    color:#eaa1a9;
+    pointer-events:none;
+    z-index:5;
+    animation:floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform:translateY(0) translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform:translateY(-28vh) translateX(-32px) rotate(90deg);
+    }
+
+    50% {
+        transform:translateY(-55vh) translateX(45px) rotate(180deg);
+    }
+
+    75% {
+        transform:translateY(-85vh) translateX(-22px) rotate(270deg);
+    }
+
+    100% {
+        transform:translateY(-125vh) translateX(34px) rotate(360deg);
+    }
+
+}
+
+.reveal {
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .9s ease,transform .9s ease;
+}
+
+.reveal.show {
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media (min-width:1400px) {
+    .hero {
+        padding-bottom:9vh;
+    }
+
+    .section {
+        padding-left:40px;
+        padding-right:40px;
+    }
+
+}
+
+@media (max-width:1024px) {
+    .timeline-grid {
+        grid-template-columns:1fr;
+        max-width:720px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .venue-placeholder {
+        height:360px;
+    }
+
+}
+
+@media (max-width:768px) {
+    .hero {
+        padding-bottom:7vh;
+    }
+
+    .hero-bg {
+        object-position:center top;
+    }
+
+    .countdown {
+        grid-template-columns:repeat(2,minmax(130px,1fr));
+    }
+
+    .section {
+        padding:70px 18px;
+    }
+
+    .venue-placeholder {
+        height:260px;
+    }
+
+    .gallery-btn {
+        width:40px;
+        height:40px;
+        font-size:22px;
+    }
+
+}
+
+@media (max-width:430px) {
+    .countdown {
+        gap:12px;
+    }
+
+    .time-box {
+        min-width:0;
+        padding:22px 10px;
+    }
+
+    .music-btn {
+        width:54px;
+        height:54px;
+        right:16px;
+        bottom:16px;
+    }
+
+    .date,.loader-date {
+        letter-spacing:4px;
+    }
+
+}
+  </style>
+ </head>
+ <body>
+  <div class="loader" id="loader">
+   <div class="loader-content">
+    <div class="loader-names">
+     Արման ♡ Հայկուհի
+    </div>
+    <div class="loader-date">
+     17.10.2026
+    </div>
+    <div class="loader-text">
+     Սիրով հրավիրում ենք
+    </div>
+   </div>
+  </div>
+  <audio id="music" loop="">
+   <source src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/John_Legend_-_All_of_Me_Official_Video.mp3?v=1782028295" type="audio/mpeg"/>
+  </audio>
+  <button aria-label="Play or pause music" class="music-btn" onclick="toggleMusic()">
+   ♫
+  </button>
+  <header class="hero">
+   <div class="hero-overlay">
+   </div>
+   <img alt="Արման և Հայկուհի" class="hero-bg" src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_6936.heic?v=1781985529"/>
+   <div class="hero-content">
+    <h1 class="hero-name">
+     Արման
+    </h1>
+    <div class="hero-heart">
+     ♡
+    </div>
+    <h1 class="hero-name">
+     Հայկուհի
+    </h1>
+    <p class="quote">
+     Դու իմ վերջինը՝ գիտակցաբար,
+     <br/>
+     Եվ իմ միակը՝ ճակատագրով...
+    </p>
+    <div class="date">
+     17.10.2026
+    </div>
+   </div>
+  </header>
+  <main>
+   <section class="section reveal">
+    <div class="section-inner">
+     <span class="section-label">
+      Մեր սիրո տոնը
+     </span>
+     <h2 class="section-title">
+      Սիրելի՛ հյուրեր, 
+     </h2>
+     <p class="text-block">
+      սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր կյանքի ամենաերջանիկ օրվան և ստեղծելու անմոռանալի հուշեր մեր նոր ստեղծվող ընտանիքի հիմքերն առավել ամուր դարձնելու համար։
+     </p>
+    </div>
+   </section>
+   <section class="section reveal">
+    <div class="section-inner">
+     <span class="section-label">
+      Մեր սիրո տոնին մնացել է
+     </span>
+     <h2 class="section-title">
+     </h2>
+     <div class="countdown">
+      <div class="time-box">
+       <div class="time-number" id="days">
+        0
+       </div>
+       <div class="time-label">
+        ՕՐ
+       </div>
+      </div>
+      <div class="time-box">
+       <div class="time-number" id="hours">
+        0
+       </div>
+       <div class="time-label">
+        ԺԱՄ
+       </div>
+      </div>
+      <div class="time-box">
+       <div class="time-number" id="minutes">
+        0
+       </div>
+       <div class="time-label">
+        ՐՈՊԵ
+       </div>
+      </div>
+      <div class="time-box">
+       <div class="time-number" id="seconds">
+        0
+       </div>
+       <div class="time-label">
+        ՎԱՅՐԿՅԱՆ
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section reveal">
+    <div class="section-inner">
+     <span class="section-label">
+      Օրվա ծրագիր
+     </span>
+     <h2 class="section-title">
+     </h2>
+     <div class="timeline-grid">
+      <article class="venue-card">
+       <div class="venue-placeholder">
+        <https://cdn.shopify.com/s/files/1/0825/1513/2635/files/0c2137799e84a4f9e888829b41fb6a81.jpg?v=1782573655>
+        <span>
+         PASTE CHURCH PHOTO HERE
+        </span>
+       </div>
+       <div class="venue-content">
+        <div class="venue-time">
+         14:00
+        </div>
+        <h3 class="venue-title">
+         Պսակադրություն
+        </h3>
+        <p class="venue-address">
+         Սուրբ Խաչ Եկեղեցի (Արկազ)
+        </p>
+        <a class="map-btn" href="https://maps.app.goo.gl/2wPnJxEaD8zYTA7h6" rel="noopener" target="_blank">
+         Բացել քարտեզը
+        </a>
+       </div>
+      </article>
+      <article class="venue-card">
+       <div class="venue-placeholder">
+        <https://cdn.shopify.com/s/files/1/0825/1513/2635/files/e1240fcd3fee2b584f04f67aa4fe0937.jpg?v=1782574436>
+        <span>
+         PASTE RESTAURANT PHOTO HERE
+        </span>
+       </div>
+       <div class="venue-content">
+        <div class="venue-time">
+         18:00
+        </div>
+        <h3 class="venue-title">
+         Տոնական խնջույք
+        </h3>
+        <p class="venue-address">
+         Լիդեր Կոմպլեքս
+        </p>
+        <a class="map-btn" href="https://maps.app.goo.gl/ShqGwfu1Lpq4E9cP8" rel="noopener" target="_blank">
+         Բացել քարտեզը
+        </a>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section reveal">
+    <div class="section-inner">
+     <span class="section-label">
+     </span>
+     <h2 class="section-title">
+      Տոնական հագուստ
+     </h2>
+     <p class="text-block">
+    Խնդրում ենք հարգել հարսնացուի տոնը և թույլ տալ, որ այդ օրը սպիտակ զգեստ կրի միայն նա։
+     </p>
+    </div>
+   </section>
+   <section class="section reveal">
+    <div class="section-inner">
+     <div class="photo-card">
+      <img alt="Արման և Հայկուհի" src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_6946.heic?v=1782058705"/>
+     </div>
+    </div>
+   </section>
+   <section class="section reveal">
+    <div class="section-inner">
+     <span class="section-label">
+     </span>
+     <h2 class="section-title">
+      Հաստատեք Ձեր ներկայությունը
+     </h2>
+     <form action="https://formspree.io/f/xvzjpqnk" class="rsvp-form" id="rsvpForm" method="POST">
+      <input name="name" placeholder="Անուն Ազգանուն" required=""/>
+      <input name="phone" placeholder="Հեռախոսահամար"/>
+      <select name="attendance" required="">
+       <option value="">
+        Ներկայություն
+       </option>
+       <option>
+        Սիրով կմասնակցեմ
+       </option>
+       <option>
+        Ցավոք, չեմ կարող
+       </option>
+      </select>
+      <select name="side" required="">
+       <option value="">
+        Ու՞մ կողմից եք հրավիրված
+       </option>
+       <option>
+        Արման
+       </option>
+       <option>
+        Հայկուհի
+       </option>
+      </select>
+      <input min="1" name="guests" placeholder="Հյուրերի քանակ" type="number"/>
+      <button type="submit">
+       Հաստատել
+      </button>
+      <p class="form-message" id="formMessage">
+      </p>
+     </form>
+    </div>
+   </section>
+   <section class="section reveal">
+    <div class="section-inner">
+     <h2 class="section-title">
+      Սիրով սպասում ենք Ձեզ
+     </h2>
+     <p class="text-block">
+      Արման ♡ Հայկուհի
+      <br/>
+      17.10.2026
+     </p>
+    </div>
+   </section>
+  </main>
+  <script>
+   const loader=document.getElementById("loader");
+window.addEventListener("load",function(){
+    setTimeout(function(){
+        loader.classList.add("hidden");
+    }
+    ,2400);
+}
+);
+const music=document.getElementById("music");
+let playing=false;
+function toggleMusic(){
+    if(playing){
+        music.pause();
+    }
+    else{
+        music.play().catch(function(){
+            console.log("Music playback requires user interaction.");
+        }
+        );
+    }
+    playing=!playing;
+}
+window.addEventListener("load",function(){
+    const target=new Date(2026,9,17,14,0,0);
+    function updateCountdown(){
+        const now=new Date();
+        let diff=target-now;
+        if(diff<0){
+            diff=0;
+        }
+        document.getElementById("days").textContent=Math.floor(diff/86400000);
+        document.getElementById("hours").textContent=Math.floor((diff%86400000)/3600000);
+        document.getElementById("minutes").textContent=Math.floor((diff%3600000)/60000);
+        document.getElementById("seconds").textContent=Math.floor((diff%60000)/1000);
+    }
+    updateCountdown();
+    setInterval(updateCountdown,1000);
+}
+);
+const form=document.getElementById("rsvpForm");
+const formMessage=document.getElementById("formMessage");
+form.addEventListener("submit",async function(e){
+    e.preventDefault();
+    const button=form.querySelector("button");
+    const originalText=button.textContent;
+    button.textContent="Ուղարկվում է...";
+    button.disabled=true;
+    try{
+        const data=new FormData(form);
+        const response=await fetch(form.action,{
+            method:"POST",body:data,headers:{
+                Accept:"application/json"
+            }
+        }
+        );
+        if(response.ok){
+            formMessage.textContent="Շնորհակալություն, Ձեր պատասխանը ստացվել է ♡";
+            form.reset();
+        }
+        else{
+            formMessage.textContent="Չհաջողվեց ուղարկել։ Խնդրում ենք փորձել կրկին։";
+        }
+    }
+    catch(error){
+        formMessage.textContent="Չհաջողվեց ուղարկել։ Խնդրում ենք ստուգել ինտերնետ կապը։";
+    }
+    button.textContent=originalText;
+    button.disabled=false;
+}
+);
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="♡";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(12+Math.random()*30)+"px";
+    heart.style.opacity=0.25+Math.random()*0.65;
+    heart.style.animationDuration=(5+Math.random()*8)+"s";
+    document.body.appendChild(heart);
+    setTimeout(function(){
+        heart.remove();
+    }
+    ,13000);
+}
+setInterval(createHeart,320);
+const revealItems=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    }
+    );
+}
+,{
+    threshold:0.15
+}
+);
+revealItems.forEach(function(item){
+    observer.observe(item);
+}
+);
+let currentSlide=0;
+const track=document.getElementById("galleryTrack");
+const slides=document.querySelectorAll(".gallery-slide");
+const dotsContainer=document.getElementById("galleryDots");
+slides.forEach(function(_,index){
+    const dot=document.createElement("button");
+    dot.className="gallery-dot";
+    dot.type="button";
+    dot.setAttribute("aria-label","Go to gallery photo "+(index+1));
+    dot.addEventListener("click",function(){
+        goToSlide(index);
+    }
+    );
+    dotsContainer.appendChild(dot);
+}
+);
+const dots=document.querySelectorAll(".gallery-dot");
+function updateGallery(){
+    track.style.transform="translateX(-"+(currentSlide*100)+"%)";
+    dots.forEach(function(dot,index){
+        dot.classList.toggle("active",index===currentSlide);
+    }
+    );
+}
+function goToSlide(index){
+    currentSlide=index;
+    if(currentSlide<0){
+        currentSlide=slides.length-1;
+    }
+    if(currentSlide>=slides.length){
+        currentSlide=0;
+    }
+    updateGallery();
+}
+function moveSlide(direction){
+    goToSlide(currentSlide+direction);
+}
+updateGallery();
+setInterval(function(){
+    moveSlide(1);
+}
+,5000);
+let startX=0;
+track.addEventListener("touchstart",function(e){
+    startX=e.touches[0].clientX;
+}
+,{
+    passive:true
+}
+);
+track.addEventListener("touchend",function(e){
+    const endX=e.changedTouches[0].clientX;
+    const diff=startX-endX;
+    if(Math.abs(diff)>50){
+        if(diff>0){
+            moveSlide(1);
+        }
+        else{
+            moveSlide(-1);
+        }
+    }
+}
+);
+  </script>
+ </body>
 </html>
