@@ -872,10 +872,10 @@
         </div>
     </div>
 
-    <!-- AUDIO -->
-    <audio id="music" loop>
-        <source src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/John_Legend_-_All_of_Me_Official_Video.mp3?v=1782028295" type="audio/mpeg">
-    </audio>
+   <!-- AUDIO -->
+<audio id="music" loop preload="auto">
+    <source src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/John_Legend_-_All_of_Me_Official_Video.mp3?v=1782028295" type="audio/mpeg">
+</audio>
 
     <!-- GLASS MUSIC PLAYER -->
     <div class="music-player" id="musicPlayer">
@@ -972,8 +972,8 @@
                         <article class="venue-card reveal delay-1">
                             <div class="venue-image">
                                 <img
-                                    src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/0c2137799e84a4f9e888829b41fb6a81.jpg?v=1782573655"
-                                    alt="Սուրբ Խաչ Եկեղեցի"
+                                    src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_-Noravanq.jpg?v=1786546344"
+                                    alt="Նորավանք"
                                 >
                             </div>
 
@@ -983,12 +983,12 @@
                                 <h3 class="venue-title">Պսակադրություն</h3>
 
                                 <p class="venue-address">
-                                    Սուրբ Խաչ Եկեղեցի (Արկազ)
+                                    Նորավանքի վանական համալիր
                                 </p>
 
                                <a
                                     class="map-btn"
-                                    href="https://maps.app.goo.gl/ShqGwfu1Lpq4E9cP8"
+                                    href="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.4335451664906!2d45.232637!3d39.68495509999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40150ca7a0e42c59%3A0xf7c6b1aa6b7f32bb!2z0JzQvtC90LDRgdGC0YvRgNGMINCd0L7RgNCw0LLQsNC90Lo!5e0!3m2!1sru!2sam!4v1786546393286!5m2!1sru!2sam" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>"
                                     target="_blank"
                                     rel="noopener"
                                 >
@@ -1055,51 +1055,60 @@
             </section>
 
             <!-- RSVP -->
-            <section class="section reveal">
-                <div class="section-inner">
-                    <h2 class="section-title">Հաստատեք Ձեր ներկայությունը</h2>
+<section class="section reveal">
+    <div class="section-inner">
+        <h2 class="section-title">Հաստատեք Ձեր ներկայությունը</h2>
 
-                    <form
-                        class="rsvp-form"
-                        action="https://formspree.io/f/xvzjpqnk"
-                        method="POST"
-                        id="rsvpForm"
-                    >
-                        <input
-                            name="name"
-                            placeholder="Անուն Ազգանուն"
-                            required
-                        >
+        <form
+            class="rsvp-form"
+            action="https://formspree.io/f/xvzjpqnk"
+            method="POST"
+            id="rsvpForm"
+        >
+            <label for="name">Անուն Ազգանուն</label>
+            <input
+                id="name"
+                name="name"
+                placeholder="Անուն Ազգանուն"
+                required
+            >
 
-                        <input
-                            name="phone"
-                            placeholder="Հեռախոսահամար"
-                        >
+            <label for="phone">Հեռախոսահամար</label>
+            <input
+                id="phone"
+                name="phone"
+                placeholder="Հեռախոսահամար"
+                required
+            >
 
-                        <select name="attendance" required>
-                            <option value="">Ներկայություն</option>
-                            <option>Սիրով կմասնակցեմ</option>
-                            <option>Ցավոք, չեմ կարող</option>
-                        </select>
+            <label for="attendance">Ներկայություն</label>
+            <select id="attendance" name="attendance" required>
+                <option value="" selected disabled>Ընտրեք տարբերակը</option>
+                <option value="Սիրով կմասնակցեմ">Սիրով կմասնակցեմ</option>
+                <option value="Ցավոք, չեմ կարող">Ցավոք, չեմ կարող</option>
+            </select>
 
-                        <select name="side" required>
-                            <option value="">Ու՞մ կողմից եք հրավիրված</option>
-                            <option>Արման</option>
-                            <option>Հայկուհի</option>
-                        </select>
+            <label for="side">Ու՞մ կողմից եք հրավիրված</label>
+            <select id="side" name="side" required>
+                <option value="" selected disabled>Ընտրեք տարբերակը</option>
+                <option value="Արման">Արման</option>
+                <option value="Հայկուհի">Հայկուհի</option>
+            </select>
 
-                        <input
-                            type="number"
-                            name="guests"
-                            placeholder="Հյուրերի քանակ"
-                            min="1"
-                        >
+            <label for="guests">Հյուրերի քանակ</label>
+            <input
+                id="guests"
+                type="number"
+                name="guests"
+                placeholder="Հյուրերի քանակ"
+                min="1"
+                required
+            >
 
-                        <button type="submit">Հաստատել</button>
-                    </form>
-                </div>
-            </section>
-
+            <button type="submit">Հաստատել ներկայությունը</button>
+        </form>
+    </div>
+</section>
             <!-- CLOSING -->
             <section class="section reveal">
                 <div class="section-inner">
@@ -1153,29 +1162,96 @@
            MUSIC PLAYER
         ===================================================== */
 
-        const music = document.getElementById("music");
-        const musicPlayer = document.getElementById("musicPlayer");
-        const musicIcon = document.getElementById("musicIcon");
+    <script>
+    const music = document.getElementById("music");
+    const musicPlayer = document.getElementById("musicPlayer");
+    const musicIcon = document.getElementById("musicIcon");
 
-        let playing = false;
+    let musicStarted = false;
 
-        function toggleMusic() {
-            if (playing) {
-                music.pause();
-                musicIcon.textContent = "♫";
-                musicPlayer.classList.remove("playing");
-            } else {
-                music.play().then(function () {
-                    musicIcon.textContent = "❚❚";
-                    musicPlayer.classList.add("playing");
-                }).catch(function () {
-                    console.log("Music playback requires user interaction.");
-                });
-            }
-
-            playing = !playing;
+    function updateMusicUI() {
+        if (!music.paused) {
+            musicPlayer.classList.add("playing");
+            musicIcon.textContent = "Ⅱ";
+        } else {
+            musicPlayer.classList.remove("playing");
+            musicIcon.textContent = "♫";
         }
+    }
 
+    function toggleMusic() {
+        if (music.paused) {
+            music.play()
+                .then(() => {
+                    musicStarted = true;
+                    updateMusicUI();
+                })
+                .catch(() => {
+                    console.log("Music playback was blocked.");
+                });
+        } else {
+            music.pause();
+            updateMusicUI();
+        }
+    }
+
+    /*
+     * Փորձում ենք երաժշտությունը միացնել
+     * կայքը բացվելուն պես։
+     */
+    window.addEventListener("load", () => {
+        music.volume = 0.7;
+
+        const playPromise = music.play();
+
+        if (playPromise !== undefined) {
+            playPromise
+                .then(() => {
+                    musicStarted = true;
+                    updateMusicUI();
+                })
+                .catch(() => {
+                    /*
+                     * Browser-ը արգելել է autoplay-ը։
+                     * Առաջին user interaction-ի ժամանակ
+                     * փորձում ենք միացնել երաժշտությունը։
+                     */
+                });
+        }
+    });
+
+    /*
+     * Եթե autoplay-ը արգելվել է,
+     * առաջին interaction-ի ժամանակ միացնում ենք երաժշտությունը։
+     */
+    function startMusicOnInteraction() {
+        if (musicStarted || !music.paused) return;
+
+        music.play()
+            .then(() => {
+                musicStarted = true;
+                updateMusicUI();
+            })
+            .catch(() => {});
+    }
+
+    document.addEventListener("click", startMusicOnInteraction, {
+        once: true
+    });
+
+    document.addEventListener("touchstart", startMusicOnInteraction, {
+        once: true,
+        passive: true
+    });
+
+    document.addEventListener("keydown", startMusicOnInteraction, {
+        once: true
+    });
+
+    music.addEventListener("play", updateMusicUI);
+    music.addEventListener("pause", updateMusicUI);
+</script>
+    
         /* =====================================================
            ANIMATED COUNTDOWN
         ===================================================== */
