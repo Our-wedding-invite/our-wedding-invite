@@ -1007,7 +1007,7 @@
                             </div>
 
                             <div class="venue-content">
-                                <div class="venue-time">18:00</div>
+                                <div class="venue-time">17:30</div>
 
                                 <h3 class="venue-title">Տոնական խնջույք</h3>
 
@@ -1142,14 +1142,14 @@
         </div>
     </div>
 
-    <script>
+     <script>
         /* =====================================================
            CINEMATIC LOADING
         ===================================================== */
-
+ 
         const loader = document.getElementById("loader");
         const page = document.getElementById("page");
-
+ 
         window.addEventListener("load", function () {
             setTimeout(function () {
                 loader.classList.add("hidden");
@@ -1157,18 +1157,17 @@
                 document.body.classList.remove("loading");
             }, 2400);
         });
-
+ 
         /* =====================================================
            MUSIC PLAYER
         ===================================================== */
-
-    <script>
+ 
     const music = document.getElementById("music");
     const musicPlayer = document.getElementById("musicPlayer");
     const musicIcon = document.getElementById("musicIcon");
-
+ 
     let musicStarted = false;
-
+ 
     function updateMusicUI() {
         if (!music.paused) {
             musicPlayer.classList.add("playing");
@@ -1178,7 +1177,7 @@
             musicIcon.textContent = "♫";
         }
     }
-
+ 
     function toggleMusic() {
         if (music.paused) {
             music.play()
@@ -1194,16 +1193,16 @@
             updateMusicUI();
         }
     }
-
+ 
     /*
      * Փորձում ենք երաժշտությունը միացնել
      * կայքը բացվելուն պես։
      */
     window.addEventListener("load", () => {
         music.volume = 0.7;
-
+ 
         const playPromise = music.play();
-
+ 
         if (playPromise !== undefined) {
             playPromise
                 .then(() => {
@@ -1219,14 +1218,14 @@
                 });
         }
     });
-
+ 
     /*
      * Եթե autoplay-ը արգելվել է,
      * առաջին interaction-ի ժամանակ միացնում ենք երաժշտությունը։
      */
     function startMusicOnInteraction() {
         if (musicStarted || !music.paused) return;
-
+ 
         music.play()
             .then(() => {
                 musicStarted = true;
@@ -1234,94 +1233,93 @@
             })
             .catch(() => {});
     }
-
+ 
     document.addEventListener("click", startMusicOnInteraction, {
         once: true
     });
-
+ 
     document.addEventListener("touchstart", startMusicOnInteraction, {
         once: true,
         passive: true
     });
-
+ 
     document.addEventListener("keydown", startMusicOnInteraction, {
         once: true
     });
-
+ 
     music.addEventListener("play", updateMusicUI);
     music.addEventListener("pause", updateMusicUI);
-</script>
-    
+ 
         /* =====================================================
            ANIMATED COUNTDOWN
         ===================================================== */
-
+ 
         const countdownValues = {
             days: null,
             hours: null,
             minutes: null,
             seconds: null
         };
-
+ 
         function setCountdownValue(id, value) {
             const element = document.getElementById(id);
-
+ 
             if (countdownValues[id] !== value) {
                 element.textContent = value;
                 element.classList.remove("number-change");
-
+ 
                 void element.offsetWidth;
-
+ 
                 element.classList.add("number-change");
                 countdownValues[id] = value;
             }
         }
-
+ 
         window.addEventListener("load", function () {
             const target = new Date(2026, 9, 17, 14, 0, 0);
-
+ 
             function updateCountdown() {
                 const now = new Date();
                 let diff = target - now;
-
+ 
                 if (diff < 0) {
                     diff = 0;
                 }
-
+ 
                 const days = Math.floor(diff / 86400000);
                 const hours = Math.floor((diff % 86400000) / 3600000);
                 const minutes = Math.floor((diff % 3600000) / 60000);
                 const seconds = Math.floor((diff % 60000) / 1000);
-
+ 
                 setCountdownValue("days", days);
                 setCountdownValue("hours", hours);
                 setCountdownValue("minutes", minutes);
                 setCountdownValue("seconds", seconds);
             }
-
+ 
             updateCountdown();
             setInterval(updateCountdown, 1000);
         });
-
+ 
         /* =====================================================
            RSVP SUCCESS DIALOG
         ===================================================== */
-
+ 
         const form = document.getElementById("rsvpForm");
         const successDialog = document.getElementById("successDialog");
-
+ 
         form.addEventListener("submit", async function (e) {
             e.preventDefault();
-
+ 
             const button = form.querySelector("button");
             const originalText = button.textContent;
-
+ 
             button.textContent = "Ուղարկվում է...";
             button.disabled = true;
-
+ 
             try {
                 const data = new FormData(form);
-
+ 
                 const response = await fetch(form.action, {
                     method: "POST",
                     body: data,
@@ -1329,7 +1327,7 @@
                         Accept: "application/json"
                     }
                 });
-
+ 
                 if (response.ok) {
                     form.reset();
                     openDialog();
@@ -1339,57 +1337,57 @@
             } catch (error) {
                 alert("Չհաջողվեց ուղարկել։ Խնդրում ենք ստուգել ինտերնետ կապը։");
             }
-
+ 
             button.textContent = originalText;
             button.disabled = false;
         });
-
+ 
         function openDialog() {
             successDialog.classList.add("show");
             successDialog.setAttribute("aria-hidden", "false");
         }
-
+ 
         function closeDialog() {
             successDialog.classList.remove("show");
             successDialog.setAttribute("aria-hidden", "true");
         }
-
+ 
         successDialog.addEventListener("click", function (event) {
             if (event.target === successDialog) {
                 closeDialog();
             }
         });
-
+ 
         /* =====================================================
            FLOATING HEARTS
         ===================================================== */
-
+ 
         function createHeart() {
             const heart = document.createElement("div");
-
+ 
             heart.className = "heart";
             heart.innerHTML = "♡";
-
+ 
             heart.style.left = Math.random() * 100 + "vw";
             heart.style.fontSize = (12 + Math.random() * 30) + "px";
             heart.style.opacity = 0.24 + Math.random() * 0.62;
             heart.style.animationDuration = (5 + Math.random() * 8) + "s";
-
+ 
             document.body.appendChild(heart);
-
+ 
             setTimeout(function () {
                 heart.remove();
             }, 13000);
         }
-
+ 
         setInterval(createHeart, 360);
-
+ 
         /* =====================================================
            SOFT REVEAL ON SCROLL
         ===================================================== */
-
+ 
         const revealItems = document.querySelectorAll(".reveal");
-
+ 
         const observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -1399,10 +1397,11 @@
         }, {
             threshold: 0.15
         });
-
+ 
         revealItems.forEach(function (item) {
             observer.observe(item);
         });
     </script>
 </body>
 </html>
+ 
