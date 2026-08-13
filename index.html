@@ -1,16 +1,130 @@
 <!DOCTYPE html>
 <html lang="hy">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Արման ♡ Հայկուհի</title>
 
+
+    <!-- =====================================================
+         WHATSAPP / TELEGRAM / FACEBOOK / MESSENGER
+         LINK PREVIEW
+    ====================================================== -->
+
+    <meta
+        name="description"
+        content="Արման ♡ Հայկուհի — 17.10.2026։ Սիրով հրավիրում ենք Ձեզ մեր կյանքի ամենաերջանիկ օրվան։"
+    >
+
+    <meta
+        name="theme-color"
+        content="#fbf7f3"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:url"
+        content="https://ourday.am/"
+    >
+
+    <meta
+        property="og:title"
+        content="Արման ♡ Հայկուհի"
+    >
+
+    <meta
+        property="og:description"
+        content="Սիրով հրավիրում ենք Ձեզ մեր կյանքի ամենաերջանիկ օրվան։ 17.10.2026"
+    >
+
+    <meta
+        property="og:image"
+        content="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_0245_1.jpg?v=1786630017"
+    >
+
+    <meta
+        property="og:image:secure_url"
+        content="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_0245_1.jpg?v=1786630017"
+    >
+
+    <meta
+        property="og:image:type"
+        content="image/jpeg"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Արման և Հայկուհի"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Արման ♡ Հայկուհի"
+    >
+
+
+    <!-- =====================================================
+         TWITTER / X PREVIEW
+    ====================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Արման ♡ Հայկուհի"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Սիրով հրավիրում ենք Ձեզ մեր կյանքի ամենաերջանիկ օրվան։ 17.10.2026"
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_0245_1.jpg?v=1786630017"
+    >
+
+    <meta
+        name="twitter:image:alt"
+        content="Արման և Հայկուհի"
+    >
+
+
     <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
 
     <style>
+
         /* =====================================================
            VARIABLES
         ===================================================== */
@@ -27,6 +141,7 @@
             --white: #ffffff;
             --shadow: rgba(97, 102, 87, 0.18);
         }
+
 
         /* =====================================================
            RESET
@@ -69,6 +184,7 @@
             font-family: inherit;
         }
 
+
         /* =====================================================
            CINEMATIC LOADING SCREEN
         ===================================================== */
@@ -77,13 +193,24 @@
             position: fixed;
             inset: 0;
             z-index: 9999;
+
             background:
-                radial-gradient(circle at top, rgba(193, 147, 134, 0.22), transparent 38%),
-                linear-gradient(135deg, #fbf7f3, #eaded8);
+                radial-gradient(
+                    circle at top,
+                    rgba(193, 147, 134, 0.22),
+                    transparent 38%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fbf7f3,
+                    #eaded8
+                );
+
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+
             transition:
                 opacity 1.15s ease,
                 visibility 1.15s ease,
@@ -127,7 +254,14 @@
             width: 92px;
             height: 1px;
             margin: 26px auto 0;
-            background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--terracotta),
+                    transparent
+                );
+
             animation: loaderLine 1.8s ease infinite;
         }
 
@@ -160,6 +294,7 @@
             }
         }
 
+
         /* =====================================================
            PAGE FADE AFTER LOADING
         ===================================================== */
@@ -167,6 +302,7 @@
         .page {
             opacity: 0;
             transform: translateY(16px);
+
             transition:
                 opacity 1.1s ease,
                 transform 1.1s ease;
@@ -177,8 +313,9 @@
             transform: translateY(0);
         }
 
+
         /* =====================================================
-           COMMON SECTIONS — MOBILE FIRST
+           COMMON SECTIONS
         ===================================================== */
 
         .section {
@@ -217,6 +354,7 @@
             font-size: clamp(1rem, 4vw, 1.14rem);
         }
 
+
         /* =====================================================
            HERO
         ===================================================== */
@@ -224,29 +362,41 @@
         .hero {
             position: relative;
             min-height: 100svh;
+
             display: flex;
             justify-content: center;
             align-items: flex-end;
+
             text-align: center;
             color: var(--white);
+
             overflow: hidden;
+
             padding: 0 18px 7vh;
         }
 
         .hero-bg {
             position: absolute;
             inset: 0;
+
+            width: 100%;
             height: 100%;
+
             object-fit: cover;
             object-position: center top;
+
             z-index: -3;
+
             transform: scale(1.03);
-            animation: heroZoom 9s ease forwards;
+
+            animation:
+                heroZoom 9s ease forwards;
         }
 
         .hero-overlay {
             position: absolute;
             inset: 0;
+
             background:
                 linear-gradient(
                     to bottom,
@@ -254,12 +404,15 @@
                     rgba(0, 0, 0, 0.28),
                     rgba(0, 0, 0, 0.68)
                 );
+
             z-index: -2;
         }
 
         .hero-content {
             width: min(100%, 980px);
-            animation: heroRise 1.5s ease both 0.35s;
+
+            animation:
+                heroRise 1.5s ease both 0.35s;
         }
 
         .hero-name {
@@ -267,7 +420,9 @@
             font-size: clamp(4.2rem, 20vw, 8.4rem);
             line-height: 0.85;
             font-weight: 400;
-            text-shadow: 0 10px 35px rgba(0, 0, 0, 0.38);
+
+            text-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.38);
         }
 
         .hero-heart {
@@ -276,11 +431,14 @@
             color: #f1d2c4;
             line-height: 1.15;
             margin: 6px 0;
-            text-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+
+            text-shadow:
+                0 10px 26px rgba(0, 0, 0, 0.3);
         }
 
         .quote {
             margin-top: 22px;
+
             font-family: "Cormorant Garamond", serif;
             font-size: clamp(1.15rem, 5vw, 1.85rem);
             line-height: 1.45;
@@ -316,6 +474,7 @@
             }
         }
 
+
         /* =====================================================
            COUNTDOWN
         ===================================================== */
@@ -323,47 +482,73 @@
         .countdown {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
+
             gap: 13px;
+
             max-width: 520px;
             margin: 34px auto 0;
         }
 
         .time-box {
             background:
-                linear-gradient(145deg, rgba(193, 147, 134, 0.98), rgba(178, 92, 64, 0.86));
+                linear-gradient(
+                    145deg,
+                    rgba(193, 147, 134, 0.98),
+                    rgba(178, 92, 64, 0.86)
+                );
+
             color: var(--white);
+
             padding: 24px 10px;
+
             border-radius: 24px;
-            box-shadow: 0 18px 45px rgba(97, 102, 87, 0.15);
+
+            box-shadow:
+                0 18px 45px rgba(97, 102, 87, 0.15);
+
             overflow: hidden;
             position: relative;
         }
 
         .time-box::after {
             content: "";
+
             position: absolute;
             inset: 0;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+
+            background:
+                linear-gradient(
+                    120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent
+                );
+
             transform: translateX(-120%);
-            animation: shimmer 5s ease-in-out infinite;
+
+            animation:
+                shimmer 5s ease-in-out infinite;
         }
 
         .time-number {
             font-family: "Cormorant Garamond", serif;
             font-size: clamp(2.5rem, 12vw, 4rem);
             line-height: 1;
+
             position: relative;
             z-index: 1;
         }
 
         .time-number.number-change {
-            animation: numberPop 0.42s ease;
+            animation:
+                numberPop 0.42s ease;
         }
 
         .time-label {
             margin-top: 8px;
             letter-spacing: 2px;
             font-size: 0.75rem;
+
             position: relative;
             z-index: 1;
         }
@@ -396,6 +581,7 @@
             }
         }
 
+
         /* =====================================================
            TIMELINE / VENUES
         ===================================================== */
@@ -403,23 +589,37 @@
         .timeline-grid {
             display: grid;
             grid-template-columns: 1fr;
+
             gap: 26px;
+
             margin-top: 42px;
         }
 
         .venue-card {
             background: rgba(255, 255, 255, 0.92);
-            border: 1px solid rgba(193, 147, 134, 0.18);
+
+            border:
+                1px solid rgba(193, 147, 134, 0.18);
+
             border-radius: 30px;
+
             overflow: hidden;
-            box-shadow: 0 22px 60px rgba(97, 102, 87, 0.16);
+
+            box-shadow:
+                0 22px 60px rgba(97, 102, 87, 0.16);
         }
 
         .venue-image {
             height: 260px;
+
             background:
-                linear-gradient(135deg, rgba(193, 147, 134, 0.18), rgba(144, 148, 131, 0.18)),
+                linear-gradient(
+                    135deg,
+                    rgba(193, 147, 134, 0.18),
+                    rgba(144, 148, 131, 0.18)
+                ),
                 var(--silver);
+
             overflow: hidden;
         }
 
@@ -441,9 +641,11 @@
 
         .venue-title {
             margin-top: 10px;
+
             font-family: "Cormorant Garamond", serif;
             font-size: clamp(1.9rem, 9vw, 2.6rem);
             font-weight: 400;
+
             color: var(--olive);
             line-height: 1.1;
         }
@@ -457,13 +659,19 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+
             margin-top: 24px;
+
             padding: 13px 28px;
+
             border-radius: 999px;
+
             background: var(--terracotta);
             color: var(--white);
+
             text-decoration: none;
             font-size: 0.94rem;
+
             transition:
                 transform 0.3s ease,
                 box-shadow 0.3s ease,
@@ -472,9 +680,13 @@
 
         .map-btn:hover {
             transform: translateY(-4px);
-            box-shadow: 0 14px 26px rgba(178, 92, 64, 0.25);
+
+            box-shadow:
+                0 14px 26px rgba(178, 92, 64, 0.25);
+
             background: #9f4f37;
         }
+
 
         /* =====================================================
            PHOTO CARD
@@ -482,10 +694,15 @@
 
         .photo-card {
             width: min(100%, 840px);
+
             margin: 0 auto;
+
             border-radius: 30px;
+
             overflow: hidden;
-            box-shadow: 0 22px 58px rgba(97, 102, 87, 0.18);
+
+            box-shadow:
+                0 22px 58px rgba(97, 102, 87, 0.18);
         }
 
         .photo-card img {
@@ -493,44 +710,72 @@
             object-fit: cover;
         }
 
+
         /* =====================================================
            RSVP
         ===================================================== */
 
         .rsvp-form {
             width: min(100%, 540px);
+
             margin: 42px auto 0;
+
             display: grid;
             gap: 14px;
+
+            text-align: left;
+        }
+
+        .rsvp-form label {
+            font-size: 0.88rem;
+            color: var(--olive);
+            margin-top: 3px;
+            margin-bottom: -7px;
         }
 
         .rsvp-form input,
         .rsvp-form select {
             width: 100%;
+
             padding: 15px 17px;
-            border: 1px solid rgba(97, 102, 87, 0.22);
+
+            border:
+                1px solid rgba(97, 102, 87, 0.22);
+
             border-radius: 16px;
+
             background: var(--white);
+
             font-size: 1rem;
             color: var(--text);
+
             outline: none;
         }
 
         .rsvp-form input:focus,
         .rsvp-form select:focus {
             border-color: var(--nude);
-            box-shadow: 0 0 0 4px rgba(193, 147, 134, 0.13);
+
+            box-shadow:
+                0 0 0 4px rgba(193, 147, 134, 0.13);
         }
 
         .rsvp-form button {
             padding: 16px;
+
             border: none;
             border-radius: 999px;
+
             background: var(--terracotta);
             color: var(--white);
+
             font-size: 1rem;
+
             cursor: pointer;
+
             transition: 0.3s ease;
+
+            margin-top: 8px;
         }
 
         .rsvp-form button:hover {
@@ -543,6 +788,7 @@
             cursor: not-allowed;
         }
 
+
         /* =====================================================
            RSVP SUCCESS DIALOG
         ===================================================== */
@@ -550,13 +796,20 @@
         .dialog-backdrop {
             position: fixed;
             inset: 0;
+
             z-index: 5000;
-            background: rgba(47, 48, 43, 0.42);
+
+            background:
+                rgba(47, 48, 43, 0.42);
+
             display: grid;
             place-items: center;
+
             padding: 20px;
+
             opacity: 0;
             visibility: hidden;
+
             transition: 0.35s ease;
         }
 
@@ -567,19 +820,34 @@
 
         .dialog {
             width: min(100%, 430px);
-            background: rgba(255, 250, 246, 0.92);
+
+            background:
+                rgba(255, 250, 246, 0.92);
+
             backdrop-filter: blur(18px);
-            border: 1px solid rgba(255, 255, 255, 0.65);
+            -webkit-backdrop-filter: blur(18px);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.65);
+
             border-radius: 30px;
+
             padding: 34px 24px;
+
             text-align: center;
-            box-shadow: 0 24px 80px rgba(47, 48, 43, 0.25);
-            transform: translateY(20px) scale(0.96);
+
+            box-shadow:
+                0 24px 80px rgba(47, 48, 43, 0.25);
+
+            transform:
+                translateY(20px) scale(0.96);
+
             transition: 0.35s ease;
         }
 
         .dialog-backdrop.show .dialog {
-            transform: translateY(0) scale(1);
+            transform:
+                translateY(0) scale(1);
         }
 
         .dialog-heart {
@@ -603,13 +871,18 @@
 
         .dialog-close {
             margin-top: 24px;
+
             padding: 12px 28px;
+
             border: none;
             border-radius: 999px;
+
             background: var(--terracotta);
             color: var(--white);
+
             cursor: pointer;
         }
+
 
         /* =====================================================
            GLASS MUSIC PLAYER
@@ -617,30 +890,47 @@
 
         .music-player {
             position: fixed;
+
             right: 14px;
             bottom: 14px;
+
             z-index: 1000;
+
             display: flex;
             align-items: center;
             gap: 10px;
+
             padding: 10px 12px;
+
             border-radius: 999px;
-            background: rgba(255, 255, 255, 0.66);
+
+            background:
+                rgba(255, 255, 255, 0.66);
+
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
-            box-shadow: 0 16px 40px rgba(97, 102, 87, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.65);
+
+            box-shadow:
+                0 16px 40px rgba(97, 102, 87, 0.25);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.65);
         }
 
         .music-toggle {
             width: 46px;
             height: 46px;
+
             border: none;
             border-radius: 50%;
+
             background: var(--terracotta);
             color: var(--white);
+
             font-size: 18px;
+
             cursor: pointer;
+
             display: grid;
             place-items: center;
         }
@@ -663,22 +953,27 @@
         }
 
         .music-player.playing .music-toggle {
-            animation: musicPulse 1.4s ease infinite;
+            animation:
+                musicPulse 1.4s ease infinite;
         }
 
         @keyframes musicPulse {
             0% {
-                box-shadow: 0 0 0 0 rgba(178, 92, 64, 0.32);
+                box-shadow:
+                    0 0 0 0 rgba(178, 92, 64, 0.32);
             }
 
             70% {
-                box-shadow: 0 0 0 12px rgba(178, 92, 64, 0);
+                box-shadow:
+                    0 0 0 12px rgba(178, 92, 64, 0);
             }
 
             100% {
-                box-shadow: 0 0 0 0 rgba(178, 92, 64, 0);
+                box-shadow:
+                    0 0 0 0 rgba(178, 92, 64, 0);
             }
         }
+
 
         /* =====================================================
            FLOATING HEARTS
@@ -686,34 +981,57 @@
 
         .heart {
             position: fixed;
+
             bottom: -50px;
+
             color: #eaa1a9;
+
             pointer-events: none;
+
             z-index: 5;
-            animation: floatHeart linear forwards;
+
+            animation:
+                floatHeart linear forwards;
         }
 
         @keyframes floatHeart {
+
             0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
+                transform:
+                    translateY(0)
+                    translateX(0)
+                    rotate(0deg);
             }
 
             25% {
-                transform: translateY(-28vh) translateX(-32px) rotate(90deg);
+                transform:
+                    translateY(-28vh)
+                    translateX(-32px)
+                    rotate(90deg);
             }
 
             50% {
-                transform: translateY(-55vh) translateX(45px) rotate(180deg);
+                transform:
+                    translateY(-55vh)
+                    translateX(45px)
+                    rotate(180deg);
             }
 
             75% {
-                transform: translateY(-85vh) translateX(-22px) rotate(270deg);
+                transform:
+                    translateY(-85vh)
+                    translateX(-22px)
+                    rotate(270deg);
             }
 
             100% {
-                transform: translateY(-125vh) translateX(34px) rotate(360deg);
+                transform:
+                    translateY(-125vh)
+                    translateX(34px)
+                    rotate(360deg);
             }
         }
+
 
         /* =====================================================
            SOFT REVEAL ANIMATIONS
@@ -721,7 +1039,10 @@
 
         .reveal {
             opacity: 0;
-            transform: translateY(38px);
+
+            transform:
+                translateY(38px);
+
             transition:
                 opacity 0.9s ease,
                 transform 0.9s ease;
@@ -740,18 +1061,23 @@
             transition-delay: 0.16s;
         }
 
+
         /* =====================================================
            TABLET
         ===================================================== */
 
         @media (min-width: 768px) {
+
             .section {
                 padding: 90px 28px;
             }
 
             .countdown {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
+                grid-template-columns:
+                    repeat(4, minmax(0, 1fr));
+
                 max-width: 760px;
+
                 gap: 18px;
             }
 
@@ -770,11 +1096,13 @@
             }
         }
 
+
         /* =====================================================
-           DESKTOP AND LARGE SCREENS
+           DESKTOP
         ===================================================== */
 
         @media (min-width: 1024px) {
+
             .section {
                 padding: 118px 40px;
             }
@@ -788,7 +1116,9 @@
             }
 
             .timeline-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
                 gap: 32px;
             }
 
@@ -801,7 +1131,13 @@
             }
         }
 
+
+        /* =====================================================
+           LARGE SCREENS
+        ===================================================== */
+
         @media (min-width: 1440px) {
+
             .section-inner {
                 width: min(1240px, 100%);
             }
@@ -816,11 +1152,13 @@
             }
         }
 
+
         /* =====================================================
            SMALL MOBILE
         ===================================================== */
 
         @media (max-width: 420px) {
+
             .section {
                 padding-left: 16px;
                 padding-right: 16px;
@@ -843,57 +1181,138 @@
             }
         }
 
+
         /* =====================================================
            REDUCED MOTION
         ===================================================== */
 
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
                 animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-                transition-duration: 0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                scroll-behavior:
+                    auto !important;
+
+                transition-duration:
+                    0.01ms !important;
             }
         }
+
     </style>
+
 </head>
+
 
 <body class="loading">
 
-    <!-- CINEMATIC LOADING SCREEN -->
+
+    <!-- =====================================================
+         CINEMATIC LOADING SCREEN
+    ===================================================== -->
+
     <div class="loader" id="loader">
+
         <div class="loader-content">
-            <div class="loader-names">Արման ♡ Հայկուհի</div>
-            <div class="loader-date">17.10.2026</div>
-            <div class="loader-text">Սիրով հրավիրում ենք</div>
+
+            <div class="loader-names">
+                Արման ♡ Հայկուհի
+            </div>
+
+            <div class="loader-date">
+                17.10.2026
+            </div>
+
+            <div class="loader-text">
+                Սիրով հրավիրում ենք
+            </div>
+
             <div class="loader-line"></div>
+
         </div>
+
     </div>
 
-   <!-- AUDIO -->
-<audio id="music" loop preload="auto">
-    <source src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/John_Legend_-_All_of_Me_Official_Video.mp3?v=1782028295" type="audio/mpeg">
-</audio>
 
-    <!-- GLASS MUSIC PLAYER -->
-    <div class="music-player" id="musicPlayer">
-        <button class="music-toggle" type="button" onclick="toggleMusic()" aria-label="Play or pause music">
-            <span id="musicIcon">♫</span>
+    <!-- =====================================================
+         AUDIO
+    ===================================================== -->
+
+    <audio
+        id="music"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/John_Legend_-_All_of_Me_Official_Video.mp3?v=1782028295"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- =====================================================
+         GLASS MUSIC PLAYER
+    ===================================================== -->
+
+    <div
+        class="music-player"
+        id="musicPlayer"
+    >
+
+        <button
+            class="music-toggle"
+            type="button"
+            onclick="toggleMusic()"
+            aria-label="Play or pause music"
+        >
+
+            <span id="musicIcon">
+                ♫
+            </span>
+
         </button>
 
+
         <div class="music-info">
-            <div class="music-title">All of Me</div>
-            <div class="music-subtitle">Tap to play</div>
+
+            <div class="music-title">
+                All of Me
+            </div>
+
+            <div class="music-subtitle">
+                Tap to play
+            </div>
+
         </div>
+
     </div>
 
-    <div class="page" id="page">
 
-        <!-- HERO -->
+    <!-- =====================================================
+         MAIN PAGE
+    ===================================================== -->
+
+    <div
+        class="page"
+        id="page"
+    >
+
+
+        <!-- =================================================
+             HERO
+        ================================================= -->
+
         <header class="hero">
+
             <div class="hero-overlay"></div>
+
 
             <img
                 class="hero-bg"
@@ -901,506 +1320,1183 @@
                 alt="Արման և Հայկուհի"
             >
 
+
             <div class="hero-content">
-                <h1 class="hero-name">Արման</h1>
-                <div class="hero-heart">♡</div>
-                <h1 class="hero-name">Հայկուհի</h1>
+
+                <h1 class="hero-name">
+                    Արման
+                </h1>
+
+
+                <div class="hero-heart">
+                    ♡
+                </div>
+
+
+                <h1 class="hero-name">
+                    Հայկուհի
+                </h1>
+
 
                 <p class="quote">
+
                     Դու իմ վերջինը՝ գիտակցաբար,<br>
                     Եվ իմ միակը՝ ճակատագրով...
+
                 </p>
 
-                <div class="date">17.10.2026</div>
+
+                <div class="date">
+                    17.10.2026
+                </div>
+
             </div>
+
         </header>
+
 
         <main>
 
-            <!-- INVITATION TEXT -->
-            <section class="section reveal">
-                <div class="section-inner">
-                    <span class="section-label">Մեր սիրո տոնը</span>
 
-                    <h2 class="section-title">Սիրելի՛ հյուրեր,</h2>
+            <!-- =================================================
+                 INVITATION TEXT
+            ================================================= -->
+
+            <section class="section reveal">
+
+                <div class="section-inner">
+
+                    <span class="section-label">
+                        Մեր սիրո տոնը
+                    </span>
+
+
+                    <h2 class="section-title">
+                        Սիրելի՛ հյուրեր,
+                    </h2>
+
 
                     <p class="text-block">
-                        սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր կյանքի ամենաերջանիկ օրվան
-                        և ստեղծելու անմոռանալի հուշեր մեր նոր ստեղծվող ընտանիքի հիմքերն առավել
-                        ամուր դարձնելու համար։
+
+                        սիրով հրավիրում ենք Ձեզ ներկա գտնվելու
+                        մեր կյանքի ամենաերջանիկ օրվան
+                        և ստեղծելու անմոռանալի հուշեր,
+                        որոնք առավել կդարձնեն մեր նոր
+                        ստեղծվող ընտանիքի հիմքերը։
+
                     </p>
+
                 </div>
+
             </section>
 
-            <!-- COUNTDOWN -->
+
+            <!-- =================================================
+                 COUNTDOWN
+            ================================================= -->
+
             <section class="section reveal">
+
                 <div class="section-inner">
-                    <span class="section-label">Մեր սիրո տոնին մնացել է</span>
+
+                    <span class="section-label">
+                        Մեր սիրո տոնին մնացել է
+                    </span>
+
 
                     <div class="countdown">
-                        <div class="time-box">
-                            <div class="time-number" id="days">0</div>
-                            <div class="time-label">ՕՐ</div>
-                        </div>
+
 
                         <div class="time-box">
-                            <div class="time-number" id="hours">0</div>
-                            <div class="time-label">ԺԱՄ</div>
+
+                            <div
+                                class="time-number"
+                                id="days"
+                            >
+                                0
+                            </div>
+
+                            <div class="time-label">
+                                ՕՐ
+                            </div>
+
                         </div>
 
-                        <div class="time-box">
-                            <div class="time-number" id="minutes">0</div>
-                            <div class="time-label">ՐՈՊԵ</div>
-                        </div>
 
                         <div class="time-box">
-                            <div class="time-number" id="seconds">0</div>
-                            <div class="time-label">ՎԱՅՐԿՅԱՆ</div>
+
+                            <div
+                                class="time-number"
+                                id="hours"
+                            >
+                                0
+                            </div>
+
+                            <div class="time-label">
+                                ԺԱՄ
+                            </div>
+
                         </div>
+
+
+                        <div class="time-box">
+
+                            <div
+                                class="time-number"
+                                id="minutes"
+                            >
+                                0
+                            </div>
+
+                            <div class="time-label">
+                                ՐՈՊԵ
+                            </div>
+
+                        </div>
+
+
+                        <div class="time-box">
+
+                            <div
+                                class="time-number"
+                                id="seconds"
+                            >
+                                0
+                            </div>
+
+                            <div class="time-label">
+                                ՎԱՅՐԿՅԱՆ
+                            </div>
+
+                        </div>
+
+
                     </div>
+
                 </div>
+
             </section>
 
-            <!-- TIMELINE -->
+
+            <!-- =================================================
+                 TIMELINE
+            ================================================= -->
+
             <section class="section reveal">
+
                 <div class="section-inner">
-                    <span class="section-label">Օրվա ծրագիր</span>
+
+                    <span class="section-label">
+                        Օրվա ծրագիր
+                    </span>
+
 
                     <div class="timeline-grid">
 
-                     <!-- CHURCH -->
-<article class="venue-card reveal delay-1">
-    <div class="venue-image">
-        <img
-            src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/WhatsApp_Image_2026-08-12_at_23.04.15.jpg?v=1786563282"
-            alt="Նորավանքի վանական համալիր"
-        >
-    </div>
 
-    <div class="venue-content">
-        <div class="venue-time">14:00</div>
+                        <!-- CHURCH -->
 
-        <h3 class="venue-title">Պսակադրություն</h3>
+                        <article
+                            class="venue-card reveal delay-1"
+                        >
 
-        <p class="venue-address">
-            Նորավանքի վանական համալիր
-        </p>
-
-        <a
-            class="map-btn"
-            href="https://maps.app.goo.gl/gXzvKEZZz3daNhdo8"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Բացել քարտեզը
-        </a>
-    </div>
-</article>
-                        <!-- RESTAURANT -->
-                        <article class="venue-card reveal delay-2">
                             <div class="venue-image">
+
+                                <img
+                                    src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/WhatsApp_Image_2026-08-12_at_23.04.15.jpg?v=1786563282"
+                                    alt="Նորավանքի վանական համալիր"
+                                >
+
+                            </div>
+
+
+                            <div class="venue-content">
+
+                                <div class="venue-time">
+                                    14:00
+                                </div>
+
+
+                                <h3 class="venue-title">
+                                    Պսակադրություն
+                                </h3>
+
+
+                                <p class="venue-address">
+                                    Նորավանքի վանական համալիր
+                                </p>
+
+
+                                <a
+                                    class="map-btn"
+                                    href="https://maps.app.goo.gl/gXzvKEZZz3daNhdo8"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Բացել քարտեզը
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- RESTAURANT -->
+
+                        <article
+                            class="venue-card reveal delay-2"
+                        >
+
+                            <div class="venue-image">
+
                                 <img
                                     src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/e1240fcd3fee2b584f04f67aa4fe0937.jpg?v=1782574436"
                                     alt="Լիդեր Կոմպլեքս"
                                 >
+
                             </div>
 
-                            <div class="venue-content">
-                                <div class="venue-time">17:30</div>
 
-                                <h3 class="venue-title">Տոնական խնջույք</h3>
+                            <div class="venue-content">
+
+                                <div class="venue-time">
+                                    17:30
+                                </div>
+
+
+                                <h3 class="venue-title">
+                                    Տոնական խնջույք
+                                </h3>
+
 
                                 <p class="venue-address">
                                     Լիդեր Կոմպլեքս
                                 </p>
 
+
                                 <a
                                     class="map-btn"
                                     href="https://maps.app.goo.gl/2wPnJxEaD8zYTA7h6"
                                     target="_blank"
-                                    rel="noopener"
+                                    rel="noopener noreferrer"
                                 >
                                     Բացել քարտեզը
                                 </a>
+
                             </div>
+
                         </article>
 
+
                     </div>
+
                 </div>
+
             </section>
 
-            <!-- DRESS CODE -->
+
+            <!-- =================================================
+                 DRESS CODE
+            ================================================= -->
+
             <section class="section reveal">
+
                 <div class="section-inner">
-                    <h2 class="section-title">Տոնական հագուստ</h2>
+
+                    <h2 class="section-title">
+                        Տոնական հագուստ
+                    </h2>
+
 
                     <p class="text-block">
-                        Խնդրում ենք հարգել հարսնացուի տոնը և թույլ տալ, որ այդ օրը
+
+                        Խնդրում ենք հարգել հարսնացուի տոնը
+                        և թույլ տալ, որ այդ օրը
                         սպիտակ զգեստ կրի միայն նա։
+
                     </p>
+
                 </div>
+
             </section>
 
-            <!-- PHOTO -->
+
+            <!-- =================================================
+                 PHOTO
+            ================================================= -->
+
             <section class="section reveal">
+
                 <div class="section-inner">
+
                     <div class="photo-card">
+
                         <img
                             src="https://cdn.shopify.com/s/files/1/0825/1513/2635/files/IMG_6946.heic?v=1782058705"
                             alt="Արման և Հայկուհի"
                         >
+
                     </div>
+
                 </div>
+
             </section>
 
-            <!-- RSVP -->
-<section class="section reveal">
-    <div class="section-inner">
-        <h2 class="section-title">Հաստատեք Ձեր ներկայությունը</h2>
 
-        <form
-            class="rsvp-form"
-            action="https://formspree.io/f/xvzjpqnk"
-            method="POST"
-            id="rsvpForm"
-        >
-            <label for="name">Անուն Ազգանուն</label>
-            <input
-                id="name"
-                name="name"
-                placeholder="Անուն Ազգանուն"
-                required
-            >
+            <!-- =================================================
+                 RSVP
+            ================================================= -->
 
-            <label for="phone">Հեռախոսահամար</label>
-            <input
-                id="phone"
-                name="phone"
-                placeholder="Հեռախոսահամար"
-                required
-            >
-
-            <label for="attendance">Ներկայություն</label>
-            <select id="attendance" name="attendance" required>
-                <option value="" selected disabled>Ընտրեք տարբերակը</option>
-                <option value="Սիրով կմասնակցեմ">Սիրով կմասնակցեմ</option>
-                <option value="Ցավոք, չեմ կարող">Ցավոք, չեմ կարող</option>
-            </select>
-
-            <label for="side">Ու՞մ կողմից եք հրավիրված</label>
-            <select id="side" name="side" required>
-                <option value="" selected disabled>Ընտրեք տարբերակը</option>
-                <option value="Արման">Արման</option>
-                <option value="Հայկուհի">Հայկուհի</option>
-            </select>
-
-            <label for="guests">Հյուրերի քանակ</label>
-            <input
-                id="guests"
-                type="number"
-                name="guests"
-                placeholder="Հյուրերի քանակ"
-                min="1"
-                required
-            >
-
-            <button type="submit">Հաստատել ներկայությունը</button>
-        </form>
-    </div>
-</section>
-            <!-- CLOSING -->
             <section class="section reveal">
+
                 <div class="section-inner">
-                    <h2 class="section-title">Սիրով սպասում ենք Ձեզ</h2>
+
+                    <h2 class="section-title">
+                        Հաստատեք Ձեր ներկայությունը
+                    </h2>
+
+
+                    <form
+                        class="rsvp-form"
+                        action="https://formspree.io/f/xvzjpqnk"
+                        method="POST"
+                        id="rsvpForm"
+                    >
+
+
+                        <label for="name">
+                            Անուն Ազգանուն
+                        </label>
+
+                        <input
+                            id="name"
+                            name="name"
+                            placeholder="Անուն Ազգանուն"
+                            autocomplete="name"
+                            required
+                        >
+
+
+                        <label for="phone">
+                            Հեռախոսահամար
+                        </label>
+
+                        <input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            placeholder="Հեռախոսահամար"
+                            autocomplete="tel"
+                            required
+                        >
+
+
+                        <label for="attendance">
+                            Ներկայություն
+                        </label>
+
+                        <select
+                            id="attendance"
+                            name="attendance"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Ընտրեք տարբերակը
+                            </option>
+
+                            <option
+                                value="Սիրով կմասնակցեմ"
+                            >
+                                Սիրով կմասնակցեմ
+                            </option>
+
+                            <option
+                                value="Ցավոք, չեմ կարող"
+                            >
+                                Ցավոք, չեմ կարող
+                            </option>
+
+                        </select>
+
+
+                        <label for="side">
+                            Ու՞մ կողմից եք հրավիրված
+                        </label>
+
+                        <select
+                            id="side"
+                            name="side"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Ընտրեք տարբերակը
+                            </option>
+
+                            <option value="Արման">
+                                Արման
+                            </option>
+
+                            <option value="Հայկուհի">
+                                Հայկուհի
+                            </option>
+
+                        </select>
+
+
+                        <label for="guests">
+                            Հյուրերի քանակ
+                        </label>
+
+                        <input
+                            id="guests"
+                            type="number"
+                            name="guests"
+                            placeholder="Հյուրերի քանակ"
+                            min="1"
+                            required
+                        >
+
+
+                        <button
+                            type="submit"
+                        >
+                            Հաստատել ներկայությունը
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CLOSING
+            ================================================= -->
+
+            <section class="section reveal">
+
+                <div class="section-inner">
+
+                    <h2 class="section-title">
+                        Սիրով սպասում ենք Ձեզ
+                    </h2>
+
 
                     <p class="text-block">
+
                         Արման ♡ Հայկուհի<br>
                         17.10.2026
+
                     </p>
+
                 </div>
+
             </section>
 
+
         </main>
+
     </div>
 
-    <!-- RSVP SUCCESS DIALOG -->
-    <div class="dialog-backdrop" id="successDialog" aria-hidden="true">
-        <div class="dialog" role="dialog" aria-modal="true">
-            <div class="dialog-heart">♡</div>
 
-            <h3 class="dialog-title">Շնորհակալություն</h3>
+    <!-- =====================================================
+         RSVP SUCCESS DIALOG
+    ===================================================== -->
+
+    <div
+        class="dialog-backdrop"
+        id="successDialog"
+        aria-hidden="true"
+    >
+
+        <div
+            class="dialog"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <div class="dialog-heart">
+                ♡
+            </div>
+
+
+            <h3 class="dialog-title">
+                Շնորհակալություն
+            </h3>
+
 
             <p class="dialog-text">
+
                 Ձեր պատասխանը հաջողությամբ ստացվել է։
                 Սիրով սպասում ենք Ձեզ։
+
             </p>
 
-            <button class="dialog-close" type="button" onclick="closeDialog()">
+
+            <button
+                class="dialog-close"
+                type="button"
+                onclick="closeDialog()"
+            >
                 Փակել
             </button>
+
         </div>
+
     </div>
 
-     <script>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
         /* =====================================================
            CINEMATIC LOADING
         ===================================================== */
- 
-        const loader = document.getElementById("loader");
-        const page = document.getElementById("page");
- 
-        window.addEventListener("load", function () {
-            setTimeout(function () {
-                loader.classList.add("hidden");
-                page.classList.add("visible");
-                document.body.classList.remove("loading");
-            }, 2400);
-        });
- 
+
+        const loader =
+            document.getElementById("loader");
+
+        const page =
+            document.getElementById("page");
+
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        loader.classList.add(
+                            "hidden"
+                        );
+
+                        page.classList.add(
+                            "visible"
+                        );
+
+                        document.body.classList.remove(
+                            "loading"
+                        );
+
+                    },
+                    2400
+                );
+
+            }
+        );
+
+
         /* =====================================================
            MUSIC PLAYER
         ===================================================== */
- 
-    const music = document.getElementById("music");
-    const musicPlayer = document.getElementById("musicPlayer");
-    const musicIcon = document.getElementById("musicIcon");
- 
-    let musicStarted = false;
- 
-    function updateMusicUI() {
-        if (!music.paused) {
-            musicPlayer.classList.add("playing");
-            musicIcon.textContent = "Ⅱ";
-        } else {
-            musicPlayer.classList.remove("playing");
-            musicIcon.textContent = "♫";
+
+        const music =
+            document.getElementById("music");
+
+        const musicPlayer =
+            document.getElementById("musicPlayer");
+
+        const musicIcon =
+            document.getElementById("musicIcon");
+
+
+        let musicStarted = false;
+
+
+        function updateMusicUI() {
+
+            if (!music.paused) {
+
+                musicPlayer.classList.add(
+                    "playing"
+                );
+
+                musicIcon.textContent = "Ⅱ";
+
+            } else {
+
+                musicPlayer.classList.remove(
+                    "playing"
+                );
+
+                musicIcon.textContent = "♫";
+
+            }
+
         }
-    }
- 
-    function toggleMusic() {
-        if (music.paused) {
-            music.play()
-                .then(() => {
-                    musicStarted = true;
-                    updateMusicUI();
-                })
-                .catch(() => {
-                    console.log("Music playback was blocked.");
-                });
-        } else {
-            music.pause();
-            updateMusicUI();
-        }
-    }
- 
-    /*
-     * Փորձում ենք երաժշտությունը միացնել
-     * կայքը բացվելուն պես։
-     */
-    window.addEventListener("load", () => {
-        music.volume = 0.7;
- 
-        const playPromise = music.play();
- 
-        if (playPromise !== undefined) {
-            playPromise
-                .then(() => {
-                    musicStarted = true;
-                    updateMusicUI();
-                })
-                .catch(() => {
-                    /*
-                     * Browser-ը արգելել է autoplay-ը։
-                     * Առաջին user interaction-ի ժամանակ
-                     * փորձում ենք միացնել երաժշտությունը։
-                     */
-                });
-        }
-    });
- 
-    /*
-     * Եթե autoplay-ը արգելվել է,
-     * առաջին interaction-ի ժամանակ միացնում ենք երաժշտությունը։
-     */
-    function startMusicOnInteraction() {
-        if (musicStarted || !music.paused) return;
- 
-        music.play()
-            .then(() => {
-                musicStarted = true;
+
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play()
+                    .then(
+                        () => {
+
+                            musicStarted = true;
+
+                            updateMusicUI();
+
+                        }
+                    )
+                    .catch(
+                        () => {
+
+                            console.log(
+                                "Music playback was blocked."
+                            );
+
+                        }
+                    );
+
+            } else {
+
+                music.pause();
+
                 updateMusicUI();
-            })
-            .catch(() => {});
-    }
- 
-    document.addEventListener("click", startMusicOnInteraction, {
-        once: true
-    });
- 
-    document.addEventListener("touchstart", startMusicOnInteraction, {
-        once: true,
-        passive: true
-    });
- 
-    document.addEventListener("keydown", startMusicOnInteraction, {
-        once: true
-    });
- 
-    music.addEventListener("play", updateMusicUI);
-    music.addEventListener("pause", updateMusicUI);
- 
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                music.volume = 0.7;
+
+
+                const playPromise =
+                    music.play();
+
+
+                if (
+                    playPromise !== undefined
+                ) {
+
+                    playPromise
+                        .then(
+                            () => {
+
+                                musicStarted = true;
+
+                                updateMusicUI();
+
+                            }
+                        )
+                        .catch(
+                            () => {
+
+                                /*
+                                 * Browser-ը կարող է
+                                 * արգելել autoplay-ը։
+                                 */
+
+                            }
+                        );
+
+                }
+
+            }
+        );
+
+
         /* =====================================================
-           ANIMATED COUNTDOWN
+           START MUSIC ON FIRST USER INTERACTION
         ===================================================== */
- 
+
+        function startMusicOnInteraction() {
+
+            if (
+                musicStarted ||
+                !music.paused
+            ) {
+                return;
+            }
+
+
+            music.play()
+                .then(
+                    () => {
+
+                        musicStarted = true;
+
+                        updateMusicUI();
+
+                    }
+                )
+                .catch(
+                    () => {}
+                );
+
+        }
+
+
+        document.addEventListener(
+            "click",
+            startMusicOnInteraction,
+            {
+                once: true
+            }
+        );
+
+
+        document.addEventListener(
+            "touchstart",
+            startMusicOnInteraction,
+            {
+                once: true,
+                passive: true
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            startMusicOnInteraction,
+            {
+                once: true
+            }
+        );
+
+
+        music.addEventListener(
+            "play",
+            updateMusicUI
+        );
+
+
+        music.addEventListener(
+            "pause",
+            updateMusicUI
+        );
+
+
+        /* =====================================================
+           COUNTDOWN
+        ===================================================== */
+
         const countdownValues = {
+
             days: null,
             hours: null,
             minutes: null,
             seconds: null
+
         };
- 
-        function setCountdownValue(id, value) {
-            const element = document.getElementById(id);
- 
-            if (countdownValues[id] !== value) {
-                element.textContent = value;
-                element.classList.remove("number-change");
- 
+
+
+        function setCountdownValue(
+            id,
+            value
+        ) {
+
+            const element =
+                document.getElementById(id);
+
+
+            if (
+                countdownValues[id] !== value
+            ) {
+
+                element.textContent =
+                    value;
+
+                element.classList.remove(
+                    "number-change"
+                );
+
+
                 void element.offsetWidth;
- 
-                element.classList.add("number-change");
-                countdownValues[id] = value;
+
+
+                element.classList.add(
+                    "number-change"
+                );
+
+
+                countdownValues[id] =
+                    value;
+
             }
+
         }
- 
-        window.addEventListener("load", function () {
-            const target = new Date(2026, 9, 17, 14, 0, 0);
- 
-            function updateCountdown() {
-                const now = new Date();
-                let diff = target - now;
- 
-                if (diff < 0) {
-                    diff = 0;
+
+
+        window.addEventListener(
+            "load",
+            function () {
+
+
+                /*
+                 * Հարսանիքի ամսաթիվը
+                 * 17.10.2026 — 14:00
+                 */
+
+                const target =
+                    new Date(
+                        2026,
+                        9,
+                        17,
+                        14,
+                        0,
+                        0
+                    );
+
+
+                function updateCountdown() {
+
+                    const now =
+                        new Date();
+
+
+                    let diff =
+                        target - now;
+
+
+                    if (diff < 0) {
+                        diff = 0;
+                    }
+
+
+                    const days =
+                        Math.floor(
+                            diff / 86400000
+                        );
+
+
+                    const hours =
+                        Math.floor(
+                            (diff % 86400000)
+                            / 3600000
+                        );
+
+
+                    const minutes =
+                        Math.floor(
+                            (diff % 3600000)
+                            / 60000
+                        );
+
+
+                    const seconds =
+                        Math.floor(
+                            (diff % 60000)
+                            / 1000
+                        );
+
+
+                    setCountdownValue(
+                        "days",
+                        days
+                    );
+
+
+                    setCountdownValue(
+                        "hours",
+                        hours
+                    );
+
+
+                    setCountdownValue(
+                        "minutes",
+                        minutes
+                    );
+
+
+                    setCountdownValue(
+                        "seconds",
+                        seconds
+                    );
+
                 }
- 
-                const days = Math.floor(diff / 86400000);
-                const hours = Math.floor((diff % 86400000) / 3600000);
-                const minutes = Math.floor((diff % 3600000) / 60000);
-                const seconds = Math.floor((diff % 60000) / 1000);
- 
-                setCountdownValue("days", days);
-                setCountdownValue("hours", hours);
-                setCountdownValue("minutes", minutes);
-                setCountdownValue("seconds", seconds);
+
+
+                updateCountdown();
+
+
+                setInterval(
+                    updateCountdown,
+                    1000
+                );
+
             }
- 
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        });
- 
+        );
+
+
         /* =====================================================
            RSVP SUCCESS DIALOG
         ===================================================== */
- 
-        const form = document.getElementById("rsvpForm");
-        const successDialog = document.getElementById("successDialog");
- 
-        form.addEventListener("submit", async function (e) {
-            e.preventDefault();
- 
-            const button = form.querySelector("button");
-            const originalText = button.textContent;
- 
-            button.textContent = "Ուղարկվում է...";
-            button.disabled = true;
- 
-            try {
-                const data = new FormData(form);
- 
-                const response = await fetch(form.action, {
-                    method: "POST",
-                    body: data,
-                    headers: {
-                        Accept: "application/json"
+
+        const form =
+            document.getElementById(
+                "rsvpForm"
+            );
+
+
+        const successDialog =
+            document.getElementById(
+                "successDialog"
+            );
+
+
+        form.addEventListener(
+            "submit",
+            async function (e) {
+
+                e.preventDefault();
+
+
+                const button =
+                    form.querySelector(
+                        "button"
+                    );
+
+
+                const originalText =
+                    button.textContent;
+
+
+                button.textContent =
+                    "Ուղարկվում է...";
+
+
+                button.disabled = true;
+
+
+                try {
+
+                    const data =
+                        new FormData(form);
+
+
+                    const response =
+                        await fetch(
+                            form.action,
+                            {
+                                method: "POST",
+
+                                body: data,
+
+                                headers: {
+                                    Accept:
+                                        "application/json"
+                                }
+                            }
+                        );
+
+
+                    if (response.ok) {
+
+                        form.reset();
+
+                        openDialog();
+
+                    } else {
+
+                        alert(
+                            "Չհաջողվեց ուղարկել։ Խնդրում ենք փորձել կրկին։"
+                        );
+
                     }
-                });
- 
-                if (response.ok) {
-                    form.reset();
-                    openDialog();
-                } else {
-                    alert("Չհաջողվեց ուղարկել։ Խնդրում ենք փորձել կրկին։");
+
+
+                } catch (error) {
+
+                    alert(
+                        "Չհաջողվեց ուղարկել։ Խնդրում ենք ստուգել ինտերնետ կապը։"
+                    );
+
                 }
-            } catch (error) {
-                alert("Չհաջողվեց ուղարկել։ Խնդրում ենք ստուգել ինտերնետ կապը։");
+
+
+                button.textContent =
+                    originalText;
+
+                button.disabled = false;
+
             }
- 
-            button.textContent = originalText;
-            button.disabled = false;
-        });
- 
+        );
+
+
         function openDialog() {
-            successDialog.classList.add("show");
-            successDialog.setAttribute("aria-hidden", "false");
+
+            successDialog.classList.add(
+                "show"
+            );
+
+            successDialog.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
         }
- 
+
+
         function closeDialog() {
-            successDialog.classList.remove("show");
-            successDialog.setAttribute("aria-hidden", "true");
+
+            successDialog.classList.remove(
+                "show"
+            );
+
+            successDialog.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
         }
- 
-        successDialog.addEventListener("click", function (event) {
-            if (event.target === successDialog) {
-                closeDialog();
+
+
+        successDialog.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    successDialog
+                ) {
+
+                    closeDialog();
+
+                }
+
             }
-        });
- 
+        );
+
+
         /* =====================================================
            FLOATING HEARTS
         ===================================================== */
- 
+
         function createHeart() {
-            const heart = document.createElement("div");
- 
-            heart.className = "heart";
-            heart.innerHTML = "♡";
- 
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = (12 + Math.random() * 30) + "px";
-            heart.style.opacity = 0.24 + Math.random() * 0.62;
-            heart.style.animationDuration = (5 + Math.random() * 8) + "s";
- 
-            document.body.appendChild(heart);
- 
-            setTimeout(function () {
-                heart.remove();
-            }, 13000);
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+
+            heart.className =
+                "heart";
+
+
+            heart.innerHTML =
+                "♡";
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.fontSize =
+                (
+                    12 +
+                    Math.random() * 30
+                ) + "px";
+
+
+            heart.style.opacity =
+                0.24 +
+                Math.random() * 0.62;
+
+
+            heart.style.animationDuration =
+                (
+                    5 +
+                    Math.random() * 8
+                ) + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(
+                function () {
+
+                    heart.remove();
+
+                },
+                13000
+            );
+
         }
- 
-        setInterval(createHeart, 360);
- 
+
+
+        setInterval(
+            createHeart,
+            360
+        );
+
+
         /* =====================================================
            SOFT REVEAL ON SCROLL
         ===================================================== */
- 
-        const revealItems = document.querySelectorAll(".reveal");
- 
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
+
+        const revealItems =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "show"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.15
                 }
-            });
-        }, {
-            threshold: 0.15
-        });
- 
-        revealItems.forEach(function (item) {
-            observer.observe(item);
-        });
+            );
+
+
+        revealItems.forEach(
+            function (item) {
+
+                observer.observe(item);
+
+            }
+        );
+
+
     </script>
+
 </body>
+
 </html>
- 
